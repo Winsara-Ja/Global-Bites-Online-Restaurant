@@ -36,7 +36,8 @@ const Register = () => {
       <div className="container1">
         <div className="user">
           <h1>Create A User Account</h1>
-          <form onSubmit={registerUser}>
+          <form onSubmit={registerUser} className="form">
+            <p className="p">UserName</p>
             <input
               type="text"
               className="username"
@@ -44,6 +45,7 @@ const Register = () => {
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
             />
+            <p className="p">Email</p>
             <input
               type="text"
               className="email"
@@ -52,6 +54,7 @@ const Register = () => {
               onChange={(e) => setData({ ...data, email: e.target.value })}
             />
             <br />
+            <p className="p">Password</p>
             <input
               type="password"
               className="password"
