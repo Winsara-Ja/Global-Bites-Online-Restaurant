@@ -63,7 +63,7 @@ const Register = () => {
               onChange={(e) => setData({ ...data, password: e.target.value })}
             />
             <br />
-            <button type="submit" className="btn">
+            <button type="submit" className="btn-register">
               Create
             </button>
           </form>
