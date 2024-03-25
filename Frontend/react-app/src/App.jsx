@@ -1,0 +1,28 @@
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home.jsx";
+import Login from "./Pages/Login.jsx";
+import Register from "./Pages/Register.jsx";
+import Profile from "./Pages/Profile.jsx";
+import { UserContextProvider } from "../context/userContext.jsx";
+import { Toaster } from "react-hot-toast";
+import Menu from "./Pages/Menu.jsx";
+import Cart from "./Pages/Cart.jsx";
+
+function App() {
+  return (
+    <UserContextProvider>
+      <Toaster position="top-left" toastOptions={{ duration: 3000 }} />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/menu" element={<Menu />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+      </Routes>
+    </UserContextProvider>
+  );
+}
+
+export default App;

@@ -1,0 +1,22 @@
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const connectDB = require("./db/connect");
+const UserRoutes = require("./routes/userAuthRoutes");
+const ItemRoutes = require("./routes/itemRoutes");
+const CartRoute = require("./routes/cartRoute");
+const app = express();
+
+connectDB();
+
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/", UserRoutes);
+app.use("/", ItemRoutes);
+app.use("/", CartRoute);
+
+const port = 5000;
+
+app.listen(port, () => console.log(`Server is listening on port ${port}`));

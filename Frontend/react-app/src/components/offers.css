@@ -1,0 +1,27 @@
+.offers-tital {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+}
+
+.img1 {
+  width: 450px;
+  height: 300px;
+  margin: 20px;
+  background: url("/3.jpg") no-repeat;
+  background-size: contain;
+}
+
+.img2 {
+  width: 350px;
+  height: 220px;
+  margin: 20px;
+  background: url("/5.jpg") no-repeat;
+  background-size: contain;
+}

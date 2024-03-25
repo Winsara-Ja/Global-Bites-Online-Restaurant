@@ -1,0 +1,101 @@
+.container1 {
+  display: flex;
+  border: 2px;
+  border-radius: 0.3rem;
+  width: 50rem;
+  height: 40rem;
+  margin: 4.5rem auto;
+  background-color: rgba(189, 207, 212, 0.837);
+}
+
+.user {
+  border-radius: 1rem;
+  width: 420px;
+  min-width: 320px;
+  height: 550px;
+  background-color: hsla(0, 0%, 100%, 0.99);
+  box-sizing: border-box;
+  margin: auto;
+  padding: 4px;
+}
+
+.user h1 {
+  font-size: 30px;
+  font-family: "JetBrains Mono", monospace;
+  margin: 2rem 2rem;
+  padding: 4px;
+  margin-bottom: 5rem;
+}
+
+.user .mobilenumber,
+.user .email,
+.user .password,
+.user .username {
+  margin: 10px;
+  margin-left: 50px;
+  margin-bottom: 0.5rem;
+  padding: 10px;
+  width: 76.5%;
+  border: 1px solid;
+  border-radius: 0.2rem;
+}
+
+.user .create {
+  margin: 2rem 8rem auto;
+  padding: 15px;
+  width: 40%;
+  border: 1px solid;
+  border-radius: 1.5rem;
+  border: 2px;
+  font-weight: bold;
+  background-color: deeppink;
+}
+
+.user .create:hover {
+  color: #ffffff;
+  background-color: rgb(96, 3, 70);
+}
+
+.error {
+  background: hsla(0, 0%, 100%, 0.98);
+  font-weight: bold;
+  color: #e14040f2;
+  padding: 4px;
+  width: 95%;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.user .btn {
+  border: 2px;
+  font-weight: bold;
+  background-color: gold;
+  border-radius: 2px;
+  margin: 20px 75px auto 75px;
+  padding: 10px;
+  width: 50%;
+}
+
+.user_login .btn:hover {
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+}
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+
+  .user {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  .user h1 {
+    margin-bottom: 2rem;
+  }
+}

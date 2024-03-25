@@ -1,0 +1,121 @@
+body {
+  background-color: #fcfcfc;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.wrapper {
+  margin-left: 58px;
+}
+
+.product-img {
+  float: left;
+  height: 420px;
+  width: 327px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  float: left;
+  height: 430px;
+  width: 310px;
+  margin: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.product-text h1 {
+  margin: 0 0 0 20px;
+  padding-top: 10px;
+  font-size: 28px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.product-text h2 {
+  margin: 0 0 10px 38px;
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  height: 125px;
+  margin: 10px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 12px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-text2 p {
+  margin: 10px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 12px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-price-btn button {
+  display: inline-block;
+  height: 44px;
+  width: 160px;
+  box-sizing: border-box;
+  border: transparent;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #010101;
+  background-color: #fffb0be8;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #010101;
+  color: #fffffffb;
+}
+
+.price {
+  text-align: center;
+  padding: 8px;
+  font-size: large;
+  font-weight: 500;
+}
+
+.img {
+  display: flex;
+  height: 145px;
+  justify-content: center;
+}
+
+.menuItems {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}

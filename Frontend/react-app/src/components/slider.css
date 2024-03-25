@@ -1,0 +1,44 @@
+.slider {
+  width: 52vw;
+  height: 38vw;
+  margin: 140px auto 0px auto;
+  background: url("/4.jpg") no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.slider-contents h2 {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.slider-contents p {
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin: 20px;
+}
+
+.view-menu-btn {
+  width: 160px;
+  height: 50px;
+  margin: 160px auto 10px auto;
+}
+
+.view-menu-btn button {
+  cursor: pointer;
+  border: none;
+  width: 160px;
+  height: 50px;
+  font-size: larger;
+  font-weight: bold;
+  font-family: "JetBrains Mono", monospace;
+  background-color: #ffe40b;
+}
+
+.view-menu-btn button:hover {
+  background-color: black;
+  color: white;
+}
