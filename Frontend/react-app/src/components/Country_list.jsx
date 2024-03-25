@@ -5,7 +5,7 @@ import { counrty_list } from "../assets/assets";
 const Country_list = () => {
   return (
     <div className="counrty-list">
-      <h1>Country List</h1>
+      <h1 className="country-title">Country List</h1>
       <p className="country-list-text">
         This restaurant offers a unique culinary experience by serving a diverse
         range of cuisines from five different countries. Each dish is perfectly
