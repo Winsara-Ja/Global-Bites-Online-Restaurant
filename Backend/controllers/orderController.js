@@ -3,17 +3,10 @@ const Order = require("../models/Order");
 const UserID = "ja_2075";
 const OrderItem = async (req, res) => {
   try {
-    const { _id, ItemName, Quantity, ItemPrice, Total } = req.body;
+    const { cartItems, Total } = req.body;
     const order = await Order.create({
       UserID: UserID,
-      ItemData: [
-        {
-          ItemID: _id,
-          ItemName: ItemName,
-          Quantity: Quantity,
-          ItemPrice: ItemPrice,
-        },
-      ],
+      ItemData: cartItems,
       TotalPrice: Total,
     });
 

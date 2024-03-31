@@ -1,0 +1,31 @@
+.order-summary {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemname,
+.itemprice,
+.itemquantity {
+  padding: 10px;
+}
+
+.itemprice {
+  margin-left: 100px;
+}
+
+.order-title {
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+}
+
+.total {
+  text-align: center;
+}
+
+.paynow {
+  text-align: center;
+}

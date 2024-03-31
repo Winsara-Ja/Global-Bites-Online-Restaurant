@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import "./cart.css";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
   let Total = 0;
   useEffect(() => {
     axios
@@ -37,19 +39,17 @@ const Cart = () => {
     }
   };
   const Order = async (cartItems) => {
-    const { _id, ItemName, Quantity, ItemPrice } = cartItems;
     try {
       await axios.post("http://localhost:5000/order", {
-        _id,
-        ItemName,
-        Quantity,
-        ItemPrice,
+        cartItems,
         Total,
       });
       if (cartItems.error) {
-        toast.error(cartItems.error);
+        res.json({
+          error: error,
+        });
       } else {
-        toast.success("ORDER SUCCESSFULL");
+        navigate("/order");
       }
     } catch (error) {
       console.log(error);
