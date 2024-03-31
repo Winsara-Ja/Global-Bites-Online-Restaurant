@@ -36,6 +36,25 @@ const Cart = () => {
       console.log(error);
     }
   };
+  const Order = async (cartItems) => {
+    const { _id, ItemName, Quantity, ItemPrice } = cartItems;
+    try {
+      await axios.post("http://localhost:5000/order", {
+        _id,
+        ItemName,
+        Quantity,
+        ItemPrice,
+        Total,
+      });
+      if (cartItems.error) {
+        toast.error(cartItems.error);
+      } else {
+        toast.success("ORDER SUCCESSFULL");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   cartItems.map(
     ({ ItemPrice, Quantity }) => (Total = Total + ItemPrice * Quantity)
@@ -141,7 +160,9 @@ const Cart = () => {
           </div>
           <hr className="hr" />
           <div className="checkout-btn">
-            <button className="btn">CHECKOUT</button>
+            <button className="btn" onClick={() => Order(cartItems)}>
+              CHECKOUT
+            </button>
           </div>
         </div>
       </div>

@@ -1,11 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
-const {
-  Login,
-  Register,
-  getProfile,
-} = require("../controllers/userControllers");
+const { OrderItem } = require("../controllers/orderController");
 
 router.use(
   cors({
@@ -14,8 +10,6 @@ router.use(
   })
 );
 
-router.post("/login", Login);
-router.post("/register", Register);
-router.get("/profile", getProfile);
+router.post("/order", OrderItem);
 
 module.exports = router;

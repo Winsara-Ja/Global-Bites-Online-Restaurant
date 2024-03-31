@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import axios from "axios";
 import Home from "./Pages/Home.jsx";
 import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
@@ -8,6 +9,9 @@ import { UserContextProvider } from "../context/userContext.jsx";
 import { Toaster } from "react-hot-toast";
 import Menu from "./Pages/Menu.jsx";
 import Cart from "./Pages/Cart.jsx";
+import Order from "./Pages/Order.jsx";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
@@ -20,6 +24,7 @@ function App() {
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/order" element={<Order />}></Route>
       </Routes>
     </UserContextProvider>
   );
