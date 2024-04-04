@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext.jsx";
 import axios from "axios";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./order.css";
 
 const Order = () => {
+  let date;
   const [orderItems, setOrderItems] = useState([]);
-  let Total = 0;
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/orderItems")
@@ -15,26 +17,44 @@ const Order = () => {
       .catch((err) => console.log(err));
   });
 
-  orderItems.map(
-    ({ ItemPrice, Quantity }) => (Total = Total + ItemPrice * Quantity)
-  );
   return (
     <>
-      <Header></Header>
-      <div className="order-title">OrderPage</div>
-      {orderItems.map((orderItem) => {
-        return (
-          <>
-            <div className="order-summary">
-              <div className="itemname">{orderItem._id}</div>
-              <div className="itemname">{orderItem.createdAt}</div>
-              <div className="itemquantity">Rs.{orderItem.TotalPrice}</div>
-              <div className="itemprice">{orderItem.PaymetStatus}</div>
-            </div>
-          </>
-        );
-      })}
-      <div className="total"></div>
+      <Header />
+      <div className="order-header">
+        <div>OrderID</div>
+        <div>Items</div>
+        <div>Order Date</div>
+        <div>Price</div>
+        <div>Payment Status</div>
+      </div>
+      <div>
+        {orderItems.map((orderItem) => {
+          return (
+            <>
+              <div className="order-summary">
+                <div className="itemid">{orderItem._id}</div>
+                <div className="item-row">
+                  {orderItem.ItemData.map((item) => {
+                    return (
+                      <div className="order-summary">
+                        <div className="itemname">{item.ItemName}</div>
+                        <div className="itemquantity">{item.Quantity}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="itemdate">
+                  {(date = orderItem.createdAt.slice(0, 10))}
+                </div>
+                <div className="itemquantity">Rs.{orderItem.TotalPrice}</div>
+                <div className="itemprice">{orderItem.PaymetStatus}</div>
+              </div>
+              <hr className="separator"></hr>
+            </>
+          );
+        })}
+      </div>
+      <Footer />
     </>
   );
 };

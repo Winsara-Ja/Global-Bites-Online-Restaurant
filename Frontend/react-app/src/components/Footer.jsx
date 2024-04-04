@@ -35,11 +35,9 @@ const Footer = () => {
               </div>
             </div>
             <div class="legal">
-              <p>&copy; 2024 Something. All rights reserved.</p>
-
-              <div class="legal__links">
-                <span>Global Bites</span>
-              </div>
+              <p>
+                &copy; 2024 Something. All rights reserved. Global Bites &copy;
+              </p>
             </div>
           </div>
         </footer>

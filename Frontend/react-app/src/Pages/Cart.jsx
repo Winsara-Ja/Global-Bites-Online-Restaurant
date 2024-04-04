@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext.jsx";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./cart.css";
 
 const Cart = () => {
@@ -76,13 +77,13 @@ const Cart = () => {
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className="card">
         <div className="cart">
           <div className="title">
             <div className="row">
               <div className="col">
-                <h4>
+                <h4 className="shpooing-cart-title">
                   <b>Shopping Cart</b>
                 </h4>
               </div>
@@ -100,7 +101,7 @@ const Cart = () => {
                 <>
                   <div className="row main align-items-center">
                     <div className="item-info">
-                      <img className="img" src="2.jpg" />
+                      <img className="img" src="burger_img.jpg" />
                       <div className="item-column">
                         <div className="item-name">{cartItem.ItemName}</div>
                         <div className="item-description">
@@ -131,7 +132,7 @@ const Cart = () => {
                           className="delete-btn"
                           onClick={() => DeleteItem(cartItem._id)}
                         >
-                          X
+                          Remove
                         </button>
                       </div>
                     </div>
@@ -147,8 +148,13 @@ const Cart = () => {
           </div>
         </div>
         <div className="summary">
-          <div>
+          <div className="order-row">
             <div className="summary-title">Summary</div>
+            <Link to="/order">
+              <div className="my-orders">
+                <button className="my-orders-btn">My Orders</button>
+              </div>
+            </Link>
           </div>
           <hr />
           <div className="row">
@@ -186,6 +192,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

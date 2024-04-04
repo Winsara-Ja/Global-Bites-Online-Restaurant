@@ -7,7 +7,7 @@
 
 .cart {
   background-color: #fcfcfc;
-  padding: 2vh;
+  padding: 3vh;
   width: 70%;
 }
 
@@ -38,7 +38,8 @@ img {
 
 .img {
   display: flex;
-  height: 100px;
+  height: 145px;
+  width: 140px;
   justify-content: center;
 }
 .titles {
@@ -172,4 +173,45 @@ img {
 .minus-btn:hover {
   background: black;
   color: white;
+}
+
+.delete-btn {
+  font-family: "jetbrains mono";
+  width: 92px;
+  height: 26px;
+  border: none;
+  background-color: black;
+  color: #ffffff;
+}
+
+.delete-btn:hover {
+  background-color: #ffe40b;
+  color: black;
+}
+
+.shpooing-cart-title {
+  margin-top: 0px;
+}
+
+.order-row {
+  display: flex;
+  align-items: center;
+}
+
+.my-orders {
+  margin-left: 148px;
+}
+
+.my-orders-btn {
+  width: 90px;
+  height: 40px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.my-orders-btn:hover {
+  background-color: #ffe40b;
+  color: black;
 }
