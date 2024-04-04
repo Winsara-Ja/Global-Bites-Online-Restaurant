@@ -1,11 +1,10 @@
 const Order = require("../models/Order");
 
-const UserID = "ja_2075";
 const OrderItem = async (req, res) => {
   try {
-    const { cartItems, Total } = req.body;
+    const { cartItems, Total, userID } = req.body;
     const order = await Order.create({
-      UserID: UserID,
+      UserID: userID,
       ItemData: cartItems,
       TotalPrice: Total,
     });
@@ -25,6 +24,17 @@ const OrderItem = async (req, res) => {
   }
 };
 
+const getOrders = async (req, res) => {
+  try {
+    const orderItems = await Order.find({});
+    res.json(orderItems);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   OrderItem,
+  getOrders,
 };

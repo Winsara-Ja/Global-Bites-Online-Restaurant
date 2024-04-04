@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext.jsx";
 import axios from "axios";
 import Header from "../components/Header";
 import "./order.css";
@@ -9,7 +10,7 @@ const Order = () => {
   let Total = 0;
   useEffect(() => {
     axios
-      .get("http://localhost:5000/cart")
+      .get("http://localhost:5000/orderItems")
       .then((orderItems) => setOrderItems(orderItems.data))
       .catch((err) => console.log(err));
   });
@@ -25,19 +26,15 @@ const Order = () => {
         return (
           <>
             <div className="order-summary">
-              <div className="itemname">{orderItem.ItemName} X </div>
-              <div className="itemquantity">{orderItem.Quantity}</div>
-              <div className="itemprice">
-                {orderItem.Quantity * orderItem.ItemPrice}
-              </div>
+              <div className="itemname">{orderItem._id}</div>
+              <div className="itemname">{orderItem.createdAt}</div>
+              <div className="itemquantity">Rs.{orderItem.TotalPrice}</div>
+              <div className="itemprice">{orderItem.PaymetStatus}</div>
             </div>
           </>
         );
       })}
-      <div className="total">{Total}</div>
-      <div className="paynow">
-        <button className="pay-btn">Pay Now</button>
-      </div>
+      <div className="total"></div>
     </>
   );
 };

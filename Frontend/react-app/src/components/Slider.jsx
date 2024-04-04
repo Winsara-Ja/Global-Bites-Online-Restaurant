@@ -57,8 +57,8 @@ const Slider = () => {
           </div>
         </div>
       </div>
-      <button className="btn-pre" onClick={prevSlide}></button>
-      <button className="btn-next" onClick={nextSlide}></button>
+      <img src="upload.png" className="btn-pre" onClick={prevSlide}></img>
+      <img src="upload1.png" className="btn-next" onClick={nextSlide}></img>
     </>
   );
 };

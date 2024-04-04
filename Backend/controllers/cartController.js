@@ -2,14 +2,15 @@ const Cart = require("../models/Cart");
 
 const AddToCart = async (req, res) => {
   try {
-    const { _id, ItemName, Description, Quantity, ItemPrice } = req.body;
-    // console.log("ItemID: " + ItemID + " Item Name: " + ItemName);
+    const { _id, ItemName, Description, Quantity, ItemPrice, userID } =
+      req.body;
     const cartItem = await Cart.create({
-      _id,
-      ItemName,
-      Description,
-      Quantity,
-      ItemPrice,
+      ItemID: _id,
+      ItemName: ItemName,
+      Description: Description,
+      Quantity: Quantity,
+      ItemPrice: ItemPrice,
+      UserID: userID,
     });
 
     if (cartItem) {
@@ -30,6 +31,7 @@ const AddToCart = async (req, res) => {
 const UpdateCartAdd = async (req, res) => {
   try {
     const { _id, Quantity } = req.body;
+    console.log(req.body);
     await Cart.findByIdAndUpdate({ _id }, { Quantity: Quantity + 1 });
   } catch (error) {
     console.log(error);
@@ -40,6 +42,20 @@ const UpdateCartRemove = async (req, res) => {
   try {
     const { _id, Quantity } = req.body;
     await Cart.findByIdAndUpdate({ _id }, { Quantity: Quantity - 1 });
+    if (Quantity == 0) {
+      DeleteItem();
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const DeleteItem = async (req, res) => {
+  try {
+    const { userID } = req.body;
+    const ID = "ja-55476fhfhgvhg";
+    console.log(req.body);
+    await Cart.deleteMany({ ItemID: ID });
   } catch (error) {
     console.log(error);
   }
@@ -50,7 +66,7 @@ const getCartItems = async (req, res) => {
     const cartItems = await Cart.find({});
     res.json(cartItems);
   } catch (error) {
-    consol.log(error);
+    console.log(error);
     res.status(500).json({ message: "Server error" });
   }
 };
@@ -60,4 +76,5 @@ module.exports = {
   getCartItems,
   UpdateCartAdd,
   UpdateCartRemove,
+  DeleteItem,
 };

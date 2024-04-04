@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext.jsx";
 import axios from "axios";
 import "./Menu.css";
 import Header from "../components/Header";
 import { toast } from "react-hot-toast";
 
 const Menu = () => {
+  const userID = "ja-55476fhfhgvhg";
   const [items, setItems] = useState([]);
   const [Quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
@@ -20,6 +22,7 @@ const Menu = () => {
     const { _id, ItemName, Description, ItemPrice } = item;
     try {
       await axios.post("http://localhost:5000/items", {
+        userID,
         _id,
         ItemName,
         Description,

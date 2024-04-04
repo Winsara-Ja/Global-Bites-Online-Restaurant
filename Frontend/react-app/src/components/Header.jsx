@@ -38,7 +38,7 @@ const Header = () => {
             </li>
             <li>
               <a href="#" className="btn">
-                Order Online
+                Order Catering
               </a>
             </li>
           </ul>

@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext.jsx";
 import axios from "axios";
 import Header from "../components/Header";
 import "./cart.css";
 
 const Cart = () => {
+  const { user } = useContext(UserContext);
+  const userID = user.id;
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;
@@ -38,9 +41,24 @@ const Cart = () => {
       console.log(error);
     }
   };
+
+  const DeleteItem = async (cartItem) => {
+    const { _id, Quantity } = cartItem;
+    try {
+      await axios.delete("http://localhost:5000/item/delete", {
+        _id,
+        Quantity,
+        userID,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const Order = async (cartItems) => {
     try {
       await axios.post("http://localhost:5000/order", {
+        userID,
         cartItems,
         Total,
       });
@@ -113,6 +131,12 @@ const Cart = () => {
                             </button>
                           </div>
                         </div>
+                        <button
+                          className="delete-btn"
+                          onClick={() => DeleteItem(cartItem)}
+                        >
+                          X
+                        </button>
                       </div>
                     </div>
                     <div className="col">Rs.{cartItem.ItemPrice}</div>
