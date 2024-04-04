@@ -20,6 +20,6 @@ router.post("/items", AddToCart);
 router.get("/cart", getCartItems);
 router.put("/update/add", UpdateCartAdd);
 router.put("/update/remove", UpdateCartRemove);
-router.delete("/item/delete", DeleteItem);
+router.delete("/item/delete/:id", DeleteItem);
 
 module.exports = router;

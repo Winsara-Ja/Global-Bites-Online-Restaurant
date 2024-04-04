@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext.jsx";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import "./cart.css";
 
 const Cart = () => {
-  const { user } = useContext(UserContext);
-  const userID = user.id;
+  const { id } = useParams();
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;
@@ -31,25 +31,21 @@ const Cart = () => {
   };
 
   const UpdateItemRemove = async (cartItem) => {
-    const { _id, Quantity } = cartItem;
+    const { ItemID, _id, Quantity } = cartItem;
     try {
       await axios.put("http://localhost:5000/update/remove", {
         _id,
         Quantity,
+        ItemID,
       });
     } catch (error) {
       console.log(error);
     }
   };
 
-  const DeleteItem = async (cartItem) => {
-    const { _id, Quantity } = cartItem;
+  const DeleteItem = async (id) => {
     try {
-      await axios.delete("http://localhost:5000/item/delete", {
-        _id,
-        Quantity,
-        userID,
-      });
+      await axios.delete("http://localhost:5000/item/delete/" + id);
     } catch (error) {
       console.log(error);
     }
@@ -133,7 +129,7 @@ const Cart = () => {
                         </div>
                         <button
                           className="delete-btn"
-                          onClick={() => DeleteItem(cartItem)}
+                          onClick={() => DeleteItem(cartItem._id)}
                         >
                           X
                         </button>

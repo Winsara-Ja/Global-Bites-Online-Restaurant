@@ -31,7 +31,6 @@ const AddToCart = async (req, res) => {
 const UpdateCartAdd = async (req, res) => {
   try {
     const { _id, Quantity } = req.body;
-    console.log(req.body);
     await Cart.findByIdAndUpdate({ _id }, { Quantity: Quantity + 1 });
   } catch (error) {
     console.log(error);
@@ -52,10 +51,8 @@ const UpdateCartRemove = async (req, res) => {
 
 const DeleteItem = async (req, res) => {
   try {
-    const { userID } = req.body;
-    const ID = "ja-55476fhfhgvhg";
-    console.log(req.body);
-    await Cart.deleteMany({ ItemID: ID });
+    const id = req.params.id;
+    await Cart.findByIdAndDelete({ _id: id });
   } catch (error) {
     console.log(error);
   }
