@@ -37,7 +37,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="btn">
+              <a href="/catering" className="btn">
                 Order Catering
               </a>
             </li>

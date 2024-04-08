@@ -10,6 +10,10 @@ import { Toaster } from "react-hot-toast";
 import Menu from "./Pages/Menu.jsx";
 import Cart from "./Pages/Cart.jsx";
 import Order from "./Pages/Order.jsx";
+import AddService from './Pages/addservice';
+import Servicedetails from './Pages/servicedetails';
+import UpdateService from './Pages/update_service';
+import Header from './Pages/header';
 
 axios.defaults.withCredentials = true;
 
@@ -25,6 +29,9 @@ function App() {
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
+        <Route path='/catering' element={<AddService/>}></Route>
+<Route path='/catering/details' element={<Servicedetails/>}></Route>
+<Route path='/update_service/:id' element={<UpdateService/>}></Route>
       </Routes>
     </UserContextProvider>
   );
