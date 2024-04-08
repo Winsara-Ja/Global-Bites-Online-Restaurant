@@ -26,7 +26,8 @@ const OrderItem = async (req, res) => {
 
 const getOrders = async (req, res) => {
   try {
-    const orderItems = await Order.find({});
+    const userID = req.params.id;
+    const orderItems = await Order.find({ UserID: userID });
     res.json(orderItems);
   } catch (error) {
     console.log(error);

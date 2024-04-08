@@ -119,6 +119,7 @@ img {
 .checkout-btn button {
   width: 100%;
   height: 50px;
+  font-family: "jetbrains mono";
   font-size: large;
   background: black;
   color: white;

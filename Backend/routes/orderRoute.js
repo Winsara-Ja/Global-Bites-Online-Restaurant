@@ -11,6 +11,6 @@ router.use(
 );
 
 router.post("/order", OrderItem);
-router.get("/orderItems", getOrders);
+router.get("/orderItems/:id", getOrders);
 
 module.exports = router;

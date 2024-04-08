@@ -2,7 +2,7 @@ const User = require("../models/Users");
 const { hashPassword, comparePassword } = require("../helpers/encrypt");
 const jwt = require("jsonwebtoken");
 
-const secret = "jwncwiefwie24534";
+const secret = "GlobalBites";
 // Login endpoint
 const Login = async (req, res) => {
   try {

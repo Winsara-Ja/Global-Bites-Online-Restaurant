@@ -60,7 +60,8 @@ const DeleteItem = async (req, res) => {
 
 const getCartItems = async (req, res) => {
   try {
-    const cartItems = await Cart.find({});
+    const userID = req.params.id;
+    const cartItems = await Cart.find({ UserID: userID });
     res.json(cartItems);
   } catch (error) {
     console.log(error);

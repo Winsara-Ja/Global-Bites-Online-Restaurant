@@ -16,8 +16,8 @@ router.use(
   })
 );
 
-router.post("/items", AddToCart);
-router.get("/cart", getCartItems);
+router.post("/addtocart", AddToCart);
+router.get("/cart/:id", getCartItems);
 router.put("/update/add", UpdateCartAdd);
 router.put("/update/remove", UpdateCartRemove);
 router.delete("/item/delete/:id", DeleteItem);

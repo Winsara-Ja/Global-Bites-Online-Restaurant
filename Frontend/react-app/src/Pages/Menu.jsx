@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import { toast } from "react-hot-toast";
 
 const Menu = () => {
-  const userID = "ja-55476fhfhgvhg";
+  const userID = "65fbed61c95e1f3dcf41d084";
   const [items, setItems] = useState([]);
   const [Quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Menu = () => {
   const AddToCart = async (item) => {
     const { _id, ItemName, Description, ItemPrice } = item;
     try {
-      await axios.post("http://localhost:5000/items", {
+      await axios.post("http://localhost:5000/addtocart", {
         userID,
         _id,
         ItemName,

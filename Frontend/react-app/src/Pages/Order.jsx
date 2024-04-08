@@ -8,11 +8,12 @@ import "./order.css";
 
 const Order = () => {
   let date;
+  const userID = "65fbed61c95e1f3dcf41d084";
   const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/orderItems")
+      .get("http://localhost:5000/orderItems/" + userID)
       .then((orderItems) => setOrderItems(orderItems.data))
       .catch((err) => console.log(err));
   });

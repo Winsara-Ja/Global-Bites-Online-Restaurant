@@ -8,13 +8,13 @@ import Footer from "../components/Footer";
 import "./cart.css";
 
 const Cart = () => {
-  const { id } = useParams();
+  const userID = "65fbed61c95e1f3dcf41d084";
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;
   useEffect(() => {
     axios
-      .get("http://localhost:5000/cart")
+      .get("http://localhost:5000/cart/" + userID)
       .then((cartItems) => setCartItems(cartItems.data))
       .catch((err) => console.log(err));
   });
