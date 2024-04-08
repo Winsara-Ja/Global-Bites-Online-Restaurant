@@ -5,6 +5,7 @@ const UserRoutes = require("./routes/userAuthRoutes");
 const ItemRoutes = require("./routes/itemRoutes");
 const CartRoute = require("./routes/cartRoute");
 const OrderRoute = require("./routes/orderRoute");
+const path = require("path")
 const app = express();
 
 connectDB();
@@ -12,6 +13,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static('uploads'))
 
 app.use("/", UserRoutes);
 app.use("/", ItemRoutes);

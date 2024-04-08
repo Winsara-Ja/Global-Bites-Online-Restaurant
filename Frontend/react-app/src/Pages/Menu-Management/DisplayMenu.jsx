@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Menu.css";
-import ExploreMenu from "../components/ExploreMenu.jsx";
-import Header from "../components/Header";
+import "./displayMenu.css"
 
-const Menu = () => {
-    const [items, setItems] = useState([]);
-    const [Quantity, setQuantity] = useState(1);
-    const navigate = useNavigate();
+const DisplayMenu = () => {
+    const [items, setItems] = useState([]); 
+    const navigate = useNavigate()
     useEffect(() => {
       axios
         .get("http://localhost:5000/items")
@@ -16,11 +13,21 @@ const Menu = () => {
         .catch((err) => console.log(err));
     });
 
+    const handleDelete = async(id) => {
+      const data = await axios.delete("http://localhost:5000/delete/" + id)
+      
+      if(data.data.success){
+        alert(data.data.message)
+      }
+    }
+    const HandleEdit = async(id) => {
+      navigate(`/updateMenu/${id}`) 
+    }
+
     return (
         <>
-          <Header />
-          <ExploreMenu />
-          <div className="menuItems">MENU ITEMS</div>
+          
+          <div className="menuItems">MANAGE MENU ITEMS</div>
           <div>
             {items.map((item) => {
               return (
@@ -39,8 +46,11 @@ const Menu = () => {
                       </div>
                       <div className="price">Rs.{item.Price}</div>
                       <div className="product-price-btn">
-                        <button type="button" >
-                          Add To Cart
+                        <button type="button" onClick={() => HandleEdit(item._id)}>
+                          Edit
+                        </button>
+                        <button type="button" onClick={() => handleDelete(item._id)}>
+                          Delete
                         </button>
                       </div>
                     </div>
@@ -53,4 +63,4 @@ const Menu = () => {
       );
 }
 
-export default Menu;    
+export default DisplayMenu

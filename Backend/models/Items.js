@@ -1,13 +1,17 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
-const itemSchema = new mongoose.Schema({
-  ItemID: String,
-  ItemName: String,
-  Img: String,
-  Description: String,
-  Price: Number,
-});
+const MenuItem = mongoose.Schema({
+    itemId: String,
+    itemName: String,
+    Description: String,
+    Price: String,
+    category: String,
+    country: String,
+    image: String
+  },{
+    timestamps : true
+})
 
-const Item = mongoose.model("Item", itemSchema);
+const Items = mongoose.model("Items", MenuItem)
 
-module.exports = Item;
+module.exports = Items

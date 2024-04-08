@@ -10,6 +10,9 @@ import { Toaster } from "react-hot-toast";
 import Menu from "./Pages/Menu.jsx";
 import Cart from "./Pages/Cart.jsx";
 import Order from "./Pages/Order.jsx";
+import AddItems from './Pages/Menu-Management/AddItems';
+import DisplayMenu from './Pages/Menu-Management/DisplayMenu'
+import EditItems from './Pages/Menu-Management/EditItems';
 
 axios.defaults.withCredentials = true;
 
@@ -25,6 +28,10 @@ function App() {
         <Route path="/menu" element={<Menu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
+        <Route path="/addItems" element={<AddItems />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/displayMenu" element={<DisplayMenu/>} />
+          <Route path="/updateMenu" element={<EditItems/>} />
       </Routes>
     </UserContextProvider>
   );
