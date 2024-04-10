@@ -4,7 +4,7 @@ import { createContext, useState, useEffect } from "react";
 export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   useEffect(() => {
     if (!user) {
       axios.get("http://localhost:5000/profile").then(({ data }) => {
@@ -13,7 +13,7 @@ export function UserContextProvider({ children }) {
     }
   }, []);
   return (
-    <UserContext.Provider value={(user, setUser)}>
+    <UserContext.Provider value={{ user, setUser }}>
       {children}
     </UserContext.Provider>
   );

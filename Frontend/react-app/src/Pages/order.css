@@ -2,13 +2,15 @@
   width: 60%;
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
+  justify-content: space-between;
+  background-color: rgb(223, 223, 219);
 }
 
-.itemname,
 .itemprice,
-.itemquantity {
+.itemquantity,
+.itemid,
+.itemdate {
   padding: 10px;
 }
 
@@ -28,4 +30,25 @@
 
 .paynow {
   text-align: center;
+}
+
+.separator {
+  color: white;
+  border: none;
+}
+
+.itemname {
+  padding: 10px;
+  align-items: left;
+}
+
+.order-header {
+  width: 60%;
+  padding: 20px 0px 10px 0px;
+  margin: auto;
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  font-size: larger;
+  font-weight: bold;
 }

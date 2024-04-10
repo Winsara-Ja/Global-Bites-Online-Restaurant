@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/userContext.jsx";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./cart.css";
 
 const Cart = () => {
+  const userID = "65fbed61c95e1f3dcf41d084";
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;
   useEffect(() => {
     axios
-      .get("http://localhost:5000/cart")
+      .get("http://localhost:5000/cart/" + userID)
       .then((cartItems) => setCartItems(cartItems.data))
       .catch((err) => console.log(err));
   });
@@ -28,19 +32,30 @@ const Cart = () => {
   };
 
   const UpdateItemRemove = async (cartItem) => {
-    const { _id, Quantity } = cartItem;
+    const { ItemID, _id, Quantity } = cartItem;
     try {
       await axios.put("http://localhost:5000/update/remove", {
         _id,
         Quantity,
+        ItemID,
       });
     } catch (error) {
       console.log(error);
     }
   };
+
+  const DeleteItem = async (id) => {
+    try {
+      await axios.delete("http://localhost:5000/item/delete/" + id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const Order = async (cartItems) => {
     try {
       await axios.post("http://localhost:5000/order", {
+        userID,
         cartItems,
         Total,
       });
@@ -62,13 +77,13 @@ const Cart = () => {
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className="card">
         <div className="cart">
           <div className="title">
             <div className="row">
               <div className="col">
-                <h4>
+                <h4 className="shpooing-cart-title">
                   <b>Shopping Cart</b>
                 </h4>
               </div>
@@ -86,7 +101,7 @@ const Cart = () => {
                 <>
                   <div className="row main align-items-center">
                     <div className="item-info">
-                      <img className="img" src="2.jpg" />
+                      <img className="img" src="burger_img.jpg" />
                       <div className="item-column">
                         <div className="item-name">{cartItem.ItemName}</div>
                         <div className="item-description">
@@ -113,6 +128,12 @@ const Cart = () => {
                             </button>
                           </div>
                         </div>
+                        <button
+                          className="delete-btn"
+                          onClick={() => DeleteItem(cartItem._id)}
+                        >
+                          Remove
+                        </button>
                       </div>
                     </div>
                     <div className="col">Rs.{cartItem.ItemPrice}</div>
@@ -127,8 +148,13 @@ const Cart = () => {
           </div>
         </div>
         <div className="summary">
-          <div>
+          <div className="order-row">
             <div className="summary-title">Summary</div>
+            <Link to="/order">
+              <div className="my-orders">
+                <button className="my-orders-btn">My Orders</button>
+              </div>
+            </Link>
           </div>
           <hr />
           <div className="row">
@@ -166,6 +192,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

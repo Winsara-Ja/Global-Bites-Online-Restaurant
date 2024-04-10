@@ -4,6 +4,7 @@ import Slider from "../components/Slider";
 import Offers from "../components/Offers";
 import AboutUs from "../components/AboutUs";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Country_list />
       <Offers />
       <AboutUs />
+      <Footer />
     </>
   );
 };

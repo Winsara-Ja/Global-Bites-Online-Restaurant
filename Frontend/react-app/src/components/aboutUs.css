@@ -4,3 +4,20 @@
   font-weight: 600;
   margin: 20px;
 }
+
+.about-us {
+  margin: auto;
+  width: 68%;
+  padding-bottom: 20px;
+}
+
+.about-img {
+  width: 600px;
+  float: right;
+  margin-left: 10px;
+}
+
+.about-us-text {
+  text-align: justify;
+  padding: 10px;
+}
