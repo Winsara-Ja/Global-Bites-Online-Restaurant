@@ -45,7 +45,7 @@ const Order = () => {
                   })}
                 </div>
                 <div className="itemdate">
-                  {(date = orderItem.createdAt.slice(0, 10))}
+                  {new Date(orderItem.createdAt).toLocaleString()}
                 </div>
                 <div className="itemquantity">Rs.{orderItem.TotalPrice}</div>
                 <div className="itemprice">{orderItem.PaymetStatus}</div>

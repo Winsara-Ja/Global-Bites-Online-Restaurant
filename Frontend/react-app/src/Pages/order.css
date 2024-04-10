@@ -1,5 +1,5 @@
 .order-summary {
-  width: 60%;
+  width: 75%;
   margin: auto;
   display: flex;
   align-items: start;
@@ -43,7 +43,7 @@
 }
 
 .order-header {
-  width: 60%;
+  width: 75%;
   padding: 20px 0px 10px 0px;
   margin: auto;
   display: flex;
