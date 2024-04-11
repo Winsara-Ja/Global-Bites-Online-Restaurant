@@ -16,7 +16,7 @@ const Menu = () => {
       .get("http://localhost:5000/items")
       .then((items) => setItems(items.data))
       .catch((err) => console.log(err));
-  });
+  }, []);
 
   const AddToCart = async (item) => {
     const { _id, ItemName, Description, ItemPrice } = item;

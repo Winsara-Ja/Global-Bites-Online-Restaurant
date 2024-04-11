@@ -18,6 +18,18 @@
   margin-left: 100px;
 }
 
+.itemprice-green {
+  color: #22a687;
+}
+
+.itemprice-red {
+  color: #dd1c1c;
+}
+
+.itemprice-yellow {
+  color: #a79a35;
+}
+
 .order-title {
   text-align: center;
   padding: 10px;
@@ -51,4 +63,38 @@
   justify-content: space-around;
   font-size: larger;
   font-weight: bold;
+}
+
+.searchbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.search {
+  width: 280px;
+  height: 34px;
+  border: 1px solid black;
+  font-family: "jetbrains mono";
+}
+
+.flex-item:nth-child(1) {
+  width: 25%;
+}
+
+.flex-item:nth-child(2) {
+  width: 15%;
+}
+
+.flex-item:nth-child(3) {
+  width: 20%;
+}
+
+.flex-item:nth-child(4) {
+  width: 10%;
+}
+
+.flex-item:nth-child(5) {
+  width: 15%;
 }
