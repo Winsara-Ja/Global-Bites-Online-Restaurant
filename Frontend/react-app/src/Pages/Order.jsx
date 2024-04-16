@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import "./order.css";
 
 const Order = () => {
-  let date;
   const userID = "65fbed61c95e1f3dcf41d084";
   const [orderItems, setOrderItems] = useState([]);
   const [search, setSearch] = useState([]);
@@ -45,7 +44,7 @@ const Order = () => {
         <div className="flex-item">Items</div>
         <div className="flex-item">Order Date</div>
         <div className="flex-item">Price</div>
-        <div className="flex-item">Payment Status</div>
+        <div className="flex-item">Order Status</div>
       </div>
       <div>
         {search.map((orderItem) => {
@@ -69,9 +68,9 @@ const Order = () => {
                 <div className="itemquantity">Rs.{orderItem.TotalPrice}</div>
                 <div
                   className={`itemprice ${
-                    orderItem.PaymetStatus == "Completed"
+                    orderItem.PaymetStatus == "Ready"
                       ? "itemprice-green"
-                      : orderItem.PaymetStatus == "Rejected"
+                      : orderItem.PaymetStatus == "Deleted"
                       ? "itemprice-red"
                       : "itemprice-yellow"
                   }

@@ -35,7 +35,17 @@ const getOrders = async (req, res) => {
   }
 };
 
+const ChangeStatus = async (req, res) => {
+  try {
+    const { _id, status } = req.body;
+    await Order.findByIdAndUpdate({ _id }, { PaymetStatus: status });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   OrderItem,
   getOrders,
+  ChangeStatus,
 };

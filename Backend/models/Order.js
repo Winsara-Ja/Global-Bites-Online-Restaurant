@@ -14,7 +14,7 @@ const orderSchema = new mongoose.Schema(
     TotalPrice: Number,
     PaymetStatus: {
       type: String,
-      default: "Pending",
+      default: "Processing",
     },
   },
   {

@@ -1,7 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
-const { OrderItem, getOrders } = require("../controllers/orderController");
+const {
+  OrderItem,
+  getOrders,
+  ChangeStatus,
+} = require("../controllers/orderController");
 
 router.use(
   cors({
@@ -12,5 +16,6 @@ router.use(
 
 router.post("/order", OrderItem);
 router.get("/orderItems/:id", getOrders);
+router.put("/order/status", ChangeStatus);
 
 module.exports = router;

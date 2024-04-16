@@ -17,7 +17,7 @@ const Cart = () => {
       .get("http://localhost:5000/cart/" + userID)
       .then((cartItems) => setCartItems(cartItems.data))
       .catch((err) => console.log(err));
-  });
+  }, [cartItems]);
 
   const UpdateItemAdd = async (cartItem) => {
     const { _id, Quantity } = cartItem;
