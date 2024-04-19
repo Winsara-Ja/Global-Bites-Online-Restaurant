@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const orderSchema = new mongoose.Schema(
   {
     UserID: String,
+    UserName: String,
     ItemData: [
       {
         ItemID: String,
@@ -14,7 +15,7 @@ const orderSchema = new mongoose.Schema(
     TotalPrice: Number,
     PaymetStatus: {
       type: String,
-      default: "Pending",
+      default: "Processing",
     },
   },
   {
