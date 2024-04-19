@@ -9,7 +9,6 @@ import { Chart as ChartJS } from "chart.js/auto";
 import ManagerHeader from "./ManagerHeader";
 
 const OrderDashboard = () => {
-  const userID = "65fbed61c95e1f3dcf41d084";
   const [orderItems, setOrderItems] = useState([]);
   const [search, setSearch] = useState([]);
   const [status, setStatus] = useState([]);
@@ -20,7 +19,7 @@ const OrderDashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/orderItems/" + userID)
+      .get("http://localhost:5000/orderItems")
       .then((orderItems) => {
         setOrderItems(orderItems.data);
         setSearch(orderItems.data);
@@ -96,7 +95,7 @@ const OrderDashboard = () => {
   const filter = (e) => {
     setSearch(
       orderItems.filter((f) =>
-        f.PaymetStatus.toLowerCase().includes(e.target.value.toLowerCase())
+        f.UserName.toLowerCase().includes(e.target.value.toLowerCase())
       )
     );
   };
@@ -115,6 +114,15 @@ const OrderDashboard = () => {
         borderWidth: 2,
       },
     ],
+  };
+
+  const options = {
+    scales: {
+      x: {
+        min: 1,
+        max: 9,
+      },
+    },
   };
 
   return (
@@ -145,8 +153,8 @@ const OrderDashboard = () => {
           </button>
           <p>Rs.{MonthlyTotal}</p>
         </div>
-        <div style={{ width: 600 }}>
-          <Line data={data}></Line>
+        <div style={{ width: 610 }}>
+          <Line data={data} options={options}></Line>
         </div>
       </div>
       <div
@@ -165,6 +173,7 @@ const OrderDashboard = () => {
         <>
           <div className="order-header">
             <div className="flex-item">OrderID</div>
+            <div className="flex-item">UserName</div>
             <div className="flex-item">Items</div>
             <div className="flex-item">Order Date</div>
             <div className="flex-item">Price</div>
@@ -176,6 +185,7 @@ const OrderDashboard = () => {
                 <>
                   <div className="order-summary">
                     <div className="itemid">{orderItem._id}</div>
+                    <div className="itemid">{orderItem.UserName}</div>
                     <div className="item-row">
                       {orderItem.ItemData.map((item) => {
                         return (

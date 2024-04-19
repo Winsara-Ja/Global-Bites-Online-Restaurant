@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./managerHeader.css";
 
 const Header = () => {
+  const [name, setName] = useState();
+
+  const isActive = (e) => {
+    setName(e.target.textContemt);
+    console.log(name);
+  };
   return (
     <div className="header1">
       <div className="navigation1">
@@ -47,19 +53,19 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/AboutUs" className="list-item1">
+              <a href="/AboutUs" className={"list-item1"}>
                 Customer Support
               </a>
             </li>
             <li>
-              <a href="/AboutUs" className="list-item1">
+              <a href="/orderdashboard" className={"list-item1"}>
                 Order
               </a>
             </li>
           </ul>
         </nav>
         <div className="cart-img1">
-          <Link to="/cart">
+          <Link to="/loutout">
             <img src="user-account.png" alt="Cart-Icon" />
           </Link>
         </div>

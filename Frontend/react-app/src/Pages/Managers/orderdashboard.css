@@ -23,7 +23,7 @@
 }
 
 .order-summary {
-  width: 75%;
+  width: 85%;
   margin: auto;
   display: flex;
   align-items: start;
@@ -39,7 +39,7 @@
 
 .itemprice1-green {
   cursor: pointer;
-  color: rgb(65, 230, 137);
+  color: #088608;
   padding: 10px;
   width: 120px;
   height: 20px;
@@ -92,7 +92,7 @@
 }
 
 .order-header {
-  width: 75%;
+  width: 85%;
   padding: 20px 0px 10px 0px;
   margin: auto;
   display: flex;
@@ -103,22 +103,26 @@
 }
 
 .flex-item:nth-child(1) {
-  width: 32%;
+  width: 28%;
 }
 
 .flex-item:nth-child(2) {
-  width: 19%;
+  width: 16%;
 }
 
 .flex-item:nth-child(3) {
-  width: 24%;
+  width: 16%;
 }
 
 .flex-item:nth-child(4) {
-  width: 13%;
+  width: 24%;
 }
 
 .flex-item:nth-child(5) {
+  width: 12%;
+}
+
+.flex-item:nth-child(6) {
   width: 15%;
 }
 
@@ -137,7 +141,7 @@
 }
 
 .hr-bar {
-  width: 75%;
+  width: 85%;
   height: 80px;
   background-color: rgb(223, 223, 219);
   margin: auto;
