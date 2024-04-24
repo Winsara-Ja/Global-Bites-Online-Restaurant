@@ -7,7 +7,6 @@ import Register from "./Pages/Register.jsx";
 import Profile from "./Pages/Profile.jsx";
 import { UserContextProvider } from "../context/userContext.jsx";
 import { Toaster } from "react-hot-toast";
-import Menu from "./Pages/Menu.jsx";
 import Cart from "./Pages/Cart.jsx";
 import Order from "./Pages/Order.jsx";
 import OrderDashboard from "./Pages/Managers/OrderDashboard.jsx";
@@ -23,7 +22,6 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/menu" element={<Menu />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
         <Route path="/orderdashboard" element={<OrderDashboard />}></Route>
