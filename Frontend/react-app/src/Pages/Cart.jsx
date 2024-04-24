@@ -9,6 +9,7 @@ import "./cart.css";
 
 const Cart = () => {
   const userID = "65fbed61c95e1f3dcf41d084";
+  const UserName = "Jayana";
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;
@@ -17,7 +18,7 @@ const Cart = () => {
       .get("http://localhost:5000/cart/" + userID)
       .then((cartItems) => setCartItems(cartItems.data))
       .catch((err) => console.log(err));
-  });
+  }, [cartItems]);
 
   const UpdateItemAdd = async (cartItem) => {
     const { _id, Quantity } = cartItem;
@@ -56,6 +57,7 @@ const Cart = () => {
     try {
       await axios.post("http://localhost:5000/order", {
         userID,
+        UserName,
         cartItems,
         Total,
       });
