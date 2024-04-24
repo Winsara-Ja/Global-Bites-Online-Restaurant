@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
+//import Header from "../components/Header";
 import "./cart.css";
 
 const Cart = () => {
@@ -62,7 +62,7 @@ const Cart = () => {
 
   return (
     <>
-      <Header></Header>
+      
       <div className="card">
         <div className="cart">
           <div className="title">

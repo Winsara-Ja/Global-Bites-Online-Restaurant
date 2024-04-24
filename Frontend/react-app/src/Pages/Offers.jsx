@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from '../components/Header';
+//import Header from '../components/Header';
 import axios from "axios";
 import './offers.css'
 
@@ -15,7 +15,7 @@ const Offers = () => {
 
   return (
     <>
-        <Header />
+       
 
         <div>
             {offers.map((offer) => {
