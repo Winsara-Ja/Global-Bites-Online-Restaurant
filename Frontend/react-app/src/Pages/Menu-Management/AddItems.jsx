@@ -2,10 +2,12 @@ import "./addItems.css"
 import React, { useState } from 'react'
 import { ImUpload } from "react-icons/im"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 const AddItems = () => {
   
   const [image,setImage] = useState("") 
+  const navigate = useNavigate()
 
   const handleUploadImage = async (e) => {
     const image = e.target.files[0];
@@ -49,6 +51,7 @@ const AddItems = () => {
                 'Content-Type': 'multipart/form-data' // Ensure proper content type for file uploads
             }
         })
+        navigate('/displayMenu')
         console.log(response)
         if (response.data.success) {
             alert(response.data.message)

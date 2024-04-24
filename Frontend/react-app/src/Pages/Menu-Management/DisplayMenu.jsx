@@ -24,10 +24,18 @@ const DisplayMenu = () => {
       navigate(`/updateMenu/${id}`) 
     }
 
+    const handleAddItem = () => {
+      navigate('/addItems')
+    }
+
     return (
         <>
           
           <div className="menuItems">MANAGE MENU ITEMS</div>
+          <div className="add-button-container">
+            <h3>Add Items Here</h3>
+            <button type="button" onClick={handleAddItem}>Add</button>
+          </div>
           <div>
             {items.map((item) => {
               return (

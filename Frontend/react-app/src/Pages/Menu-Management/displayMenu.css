@@ -121,3 +121,31 @@ body {
     text-align: center;
     padding: 10px;
   }
+  .add-button-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 50px;
+  }
+  .add-button-container button{
+    display: inline-block;
+    height: 40px;
+    width: 160px;
+    box-sizing: border-box;
+    border: transparent;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #010101;
+    background-color: #fffb0be8;
+    cursor: pointer;
+    outline: none;
+  }
+  .add-button-container button:hover{
+    background-color: #010101;
+    color: #fffffffb;
+  }
