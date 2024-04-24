@@ -4,6 +4,8 @@ const connectDB = require("./db/connect");
 const UserRoutes = require("./routes/userAuthRoutes");
 const CartRoute = require("./routes/cartRoute");
 const OrderRoute = require("./routes/orderRoute");
+const ItemRoute = require("./routes/itemRoutes")
+const OfferRoute = require("./routes/offerRoute")
 const app = express();
 
 connectDB();

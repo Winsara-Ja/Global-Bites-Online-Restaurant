@@ -14,10 +14,18 @@ const Menu = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/items")
-      .then((items) => setItems(items.data))
-      .catch((err) => console.log(err));
-  });
+      .get('http://localhost:5000/items')
+      .then((response) => {
+        const uniqueCategories = [...new Set(response.data.map(item => item.category))];
+        setCategories(uniqueCategories);
+        // Set all items initially
+        setFilteredItems(response.data);
+        setAllItems(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching items:', error);
+      });
+  }, []);
 
   const handleCategoryClick = (cat) => {
     // Check if the clicked category is the same as the currently selected category
