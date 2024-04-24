@@ -1,0 +1,74 @@
+.update-item-container{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .update-item-container form{
+    width: 420px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  .update-item-container form h2{
+    text-align: center;
+  }
+  .update-item-container form input{
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .update-item-container form label{
+    font-size: 18px;
+  }
+  .update-item-container form select{
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+  }
+  .update-item-container form .food-image-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .update-item-container form .food-image-container img{
+    width: 80%;
+    height: auto;
+  }
+  .update-item-container form .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .update-item-container form .button-container .btn{
+    display: inline-block;
+    height: 40px;
+    width: 80%;
+    box-sizing: border-box;
+    border: transparent;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #010101;
+    background-color: #fffb0be8;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+  }
+  .update-item-container form .button-container .btn:hover{
+    background-color: #010101;
+    color: #fffffffb;
+  }

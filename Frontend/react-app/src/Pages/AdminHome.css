@@ -1,0 +1,24 @@
+.manager-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .list-manager {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .manager-img {
+    width: 300px; /* Adjust the width of the manager image */
+    height: 150px; /* Adjust the height of the manager image */
+    border-radius: 20px; /* Make the image circular */
+    cursor: pointer;
+  }
+  
+  .manager-name {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
