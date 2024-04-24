@@ -4,36 +4,36 @@
   text-align: center;
   padding: 10px;
 }
-  .add-button-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-  }
-  .add-button-container button{
-    display: inline-block;
-    height: 40px;
-    width: 160px;
-    box-sizing: border-box;
-    border: transparent;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 15px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #010101;
-    background-color: #fffb0be8;
-    cursor: pointer;
-    outline: none;
-    margin-top: 15px;
-  }
-  .add-button-container button:hover{
-    background-color: #010101;
-    color: #fffffffb;
-  }
+.add-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.add-button-container button {
+  display: inline-block;
+  height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  border: transparent;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #010101;
+  background-color: #fffb0be8;
+  cursor: pointer;
+  outline: none;
+  margin-top: 15px;
+}
+.add-button-container button:hover {
+  background-color: #010101;
+  color: #fffffffb;
+}
 
-  /* Style for the table */
+/* Style for the table */
 .table-container {
   margin-top: 20px;
 }
@@ -89,15 +89,15 @@ button {
 
 button:hover {
   background-color: #010101;
-    color: #fffffffb;
+  color: #fffffffb;
 }
-.search-container{
+.search-container {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-.search-container input{
-  height: 30px;
+.search-container input {
+  height: 35px;
   width: 700px;
-  border-radius: 15px;
+  border: 1px solid black;
 }

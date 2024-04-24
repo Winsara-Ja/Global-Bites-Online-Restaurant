@@ -24,7 +24,6 @@ body {
   margin: 10px;
   border-radius: 6px;
   background-color: #ffffff;
-  
 }
 
 .product-text h1 {
@@ -122,65 +121,67 @@ body {
   text-align: center;
   padding: 10px;
 }
-.explore-menu{
+.explore-menu {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.explore-menu h1{
-   color: #262626;
-   font-weight: 500;
-   text-align: center;
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+  text-align: center;
 }
-.explore-menu-text{
+.explore-menu-text {
   display: flex;
   flex-direction: column;
   text-align: center;
   max-width: 100%;
   color: #808080;
+  margin-top: 0px;
 }
-.explore-menu-list{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   gap: 30px;
-   text-align: center;
-   margin: 20px 0px;
-   overflow-x: scroll;
+.explore-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  overflow-x: scroll;
+  margin-left: 60px;
+  margin-right: 60px;
 }
-.explore-menu-list::-webkit-scrollbar{
-   display: none;
+.explore-menu-list::-webkit-scrollbar {
+  display: none;
 }
-.explore-menu-list-item p{
-   margin-top: 10px;
-   color: #262626;
-   font-size: max(1.4vw,16px);
-   cursor: pointer;
-   font-weight: 600;
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #262626;
+  font-size: max(1.4vw, 16px);
+  cursor: pointer;
+  font-weight: 600;
 }
-.explore-menu hr{
-   margin: 10px 0px;
-   height: 2px;
-   background-color: #e2e2e2;
-   border: none;
+.explore-menu hr {
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
 }
-.explore-menu-list-item .active{
-   border: 4px solid tomato;
-   padding: 2px;
+.explore-menu-list-item .active {
+  border: 4px solid tomato;
+  padding: 2px;
 }
-.search-bar{
+.search-bar {
   min-width: 50%;
-  height: 30px;
-  border-radius: 15px;
+  height: 35px;
+  border: 1px solid black;
   align-items: center;
 }
-.search-bar-container{
+.search-bar-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 20px;
 }
-.price-range-container{
+.price-range-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -188,29 +189,16 @@ body {
   text-align: center;
   align-items: center;
 }
-.price-range-container input{
-  height: 30px;
-  border-radius: 15px;
+.price-range-container input {
+  height: 35px;
+  border: 1px solid black;
 }
-.price-range-container button{
-  display: inline-block;
-  height: 30px;
-  width: 65px;
-  box-sizing: border-box;
-  border: transparent;
+.price-range-container button {
   font-family: "JetBrains Mono", monospace;
-  font-size: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #010101;
-  background-color: #d4dd97e8;
-  cursor: pointer;
-  outline: none;
 }
-@media (max-width:1050px){
-   .explore-menu-text{
-       max-width: 100%;
-       font-size: 14px;
-   }
+@media (max-width: 1050px) {
+  .explore-menu-text {
+    max-width: 100%;
+    font-size: 14px;
+  }
 }

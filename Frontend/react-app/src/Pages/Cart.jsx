@@ -103,7 +103,10 @@ const Cart = () => {
                 <>
                   <div className="row main align-items-center">
                     <div className="item-info">
-                      <img className="img" src="burger_img.jpg" />
+                      <img
+                        className="img"
+                        src={"http://localhost:5000/" + cartItem.Img}
+                      />
                       <div className="item-column">
                         <div className="item-name">{cartItem.ItemName}</div>
                         <div className="item-description">

@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./slider.css";
 
 const Slider = () => {
@@ -53,7 +55,9 @@ const Slider = () => {
             architecto vero repellat qui.
           </p>
           <div className="view-menu-btn">
-            <button>View Menu</button>
+            <Link to="/Menu">
+              <button>View Menu</button>
+            </Link>
           </div>
         </div>
       </div>

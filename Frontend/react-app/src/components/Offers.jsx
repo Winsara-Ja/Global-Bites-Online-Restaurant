@@ -1,5 +1,6 @@
 import React from "react";
 import "./offers.css";
+import { Link } from "react-router-dom";
 
 const Offers = () => {
   return (
@@ -17,7 +18,9 @@ const Offers = () => {
         </div>
         <div className="offers2">
           <div className="img2"></div>
-          <button className="offers-btn">Check Out More!</button>
+          <Link to="/offers">
+            <button className="offers-btn">Check Out More!</button>
+          </Link>
         </div>
       </div>
     </>

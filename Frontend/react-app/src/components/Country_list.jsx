@@ -1,6 +1,7 @@
 import React from "react";
 import "./country_list.css";
 import { counrty_list } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const Country_list = () => {
   return (
@@ -20,12 +21,14 @@ const Country_list = () => {
         {counrty_list.map((counrty, index) => {
           return (
             <div key={index} className="list-items">
-              <img
-                className="country-img"
-                src={counrty.counrty_img}
-                alt="country-flag"
-              />
-              <p className="country-name">{counrty.county_name}</p>
+              <Link to={counrty.Route} className="link-country">
+                <img
+                  className="country-img"
+                  src={counrty.counrty_img}
+                  alt="country-flag"
+                />
+                <p className="country-name">{counrty.county_name}</p>
+              </Link>
             </div>
           );
         })}

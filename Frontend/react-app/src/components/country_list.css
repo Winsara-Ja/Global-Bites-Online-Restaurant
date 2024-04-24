@@ -36,3 +36,7 @@
   margin: auto;
   text-align: justify;
 }
+
+.link-country:hover {
+  color: black;
+}

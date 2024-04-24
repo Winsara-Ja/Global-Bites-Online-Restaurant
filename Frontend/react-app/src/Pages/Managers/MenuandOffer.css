@@ -1,0 +1,30 @@
+.menu-offer-container1 {
+  display: flex;
+  justify-content: center;
+}
+.menu-container {
+  width: 400px;
+  height: 350px;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.menu-container img {
+  width: 90%;
+  height: 80%;
+}
+.menu-container h3 {
+  text-align: center;
+}
+.offer-container {
+  width: 400px;
+  height: 350px;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.offer-container img {
+  width: 90%;
+  height: 80%;
+}
+.offer-container h3 {
+  text-align: center;
+}

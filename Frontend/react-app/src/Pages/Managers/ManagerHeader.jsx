@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="header1">
       <div className="navigation1">
-        <Link>
+        <Link to="/adminHome">
           <div className="name1">Global Bites</div>
         </Link>
         <nav className="nav1">
@@ -43,7 +43,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/AboutUs" className="list-item1">
+              <a href="/manager/menuDashboard" className="list-item1">
                 Menu & Offers
               </a>
             </li>
@@ -58,7 +58,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/orderdashboard" className={"list-item1"}>
+              <a href="/manager/orderdashboard" className={"list-item1"}>
                 Order
               </a>
             </li>

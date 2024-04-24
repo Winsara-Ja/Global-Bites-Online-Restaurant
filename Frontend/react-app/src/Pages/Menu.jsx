@@ -33,12 +33,13 @@ const Menu = () => {
   }, []);
 
   const AddToCart = async (item) => {
-    const { _id, itemName, Description, Price } = item;
+    const { _id, itemName, image, Description, Price } = item;
     try {
       await axios.post("http://localhost:5000/addtocart", {
         userID,
         _id,
         itemName,
+        image,
         Description,
         Quantity,
         Price,
