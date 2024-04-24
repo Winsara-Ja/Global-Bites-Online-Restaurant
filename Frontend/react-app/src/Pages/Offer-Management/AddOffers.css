@@ -1,4 +1,4 @@
-.update-item-container{
+.add-offer-ontainer{
     position: relative;
     background-color: rgba(0, 0, 0, 0.2);
     left: 0;
@@ -9,7 +9,9 @@
     justify-content: center;
     align-items: center;
   }
-  .update-item-container form{
+  .add-offer-ontainer form{
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 420px;
     background-color: white;
     display: flex;
@@ -18,43 +20,52 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
-  .update-item-container form h2{
+  .add-offer-ontainer form h2{
     text-align: center;
   }
-  .update-item-container form input{
+  .add-offer-ontainer form input{
     font-size: 18px;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 10px;
   }
-  .update-item-container form label{
+  .add-offer-ontainer form label{
     font-size: 18px;
   }
-  .update-item-container form select{
-    font-size: 18px;
-    padding: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 40px;
-  }
-  .update-item-container form .food-image-container{
-    align-items: center;
+  .add-offer-ontainer form .uploadBox{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 60px;
   }
-  .update-item-container form .food-image-container img{
+  #image{
+    display: none;
+  }
+  .add-offer-ontainer form .uploadBox img{
+    height: 80%;
     width: 80%;
-    height: auto;
+    border-radius: 5px;
   }
-  .update-item-container form .button-container{
+  .add-offer-ontainer form .offer-image-label-container .offer-image-label{
+    text-align: center;
+  }
+  .add-offer-ontainer form .offer-image-label-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .add-offer-ontainer form .btn2-container{
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .update-item-container form .button-container .btn{
+  .add-offer-ontainer form .btn2-container .btn2{
     display: inline-block;
     height: 40px;
-    width: 80%;
+    width: 160px;
     box-sizing: border-box;
     border: transparent;
     font-family: "JetBrains Mono", monospace;
@@ -68,7 +79,7 @@
     outline: none;
     margin-top: 20px;
   }
-  .update-item-container form .button-container .btn:hover{
+  .add-offer-ontainer form .btn2-container .btn2:hover{
     background-color: #010101;
     color: #fffffffb;
   }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 //import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Menu.css";
-//import ExploreMenu from "../components/ExploreMenu.jsx";
 import Header from "../components/Header";
 
 const Menu = () => {
@@ -11,6 +10,7 @@ const Menu = () => {
   const [filteredItems, setFilteredItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [priceRange, setPriceRange] = useState({ min: '', max: '' });
 
   useEffect(() => {
     axios
@@ -62,6 +62,25 @@ const Menu = () => {
     }
   };
 
+  const handlePriceRangeChange = (event) => {
+    const { name, value } = event.target;
+    setPriceRange(prevRange => ({
+      ...prevRange,
+      [name]: value
+    }));
+  };
+
+  const filterItemsByPriceRange = () => {
+    
+    const filteredItemsByPriceRange = allItems.filter(item =>
+      item.Price >= priceRange.min && item.Price <= priceRange.max
+    );
+    console.log("Filtered Items:", filteredItemsByPriceRange);
+  
+    setFilteredItems(filteredItemsByPriceRange);
+  };
+  
+
   return (
     <>
     <Header />
@@ -78,8 +97,28 @@ const Menu = () => {
           value={searchQuery} 
           onChange={handleSearchInputChange}
           className="search-bar"
-      />
+        />
+        <div className="price-range-container">
+          <label>Price Range:</label>
+          <input
+            type="number"
+            name="min"
+            value={priceRange.min}
+            onChange={handlePriceRangeChange}
+            placeholder="Min"
+          />
+          <input
+            type="number"
+            name="max"
+            value={priceRange.max}
+            onChange={handlePriceRangeChange}
+            placeholder="Max"
+          />
+          <button onClick={filterItemsByPriceRange}>Apply</button>
+        </div>
       </div>
+
+      
       
       <div className='explore-menu-list'>
         {Array.isArray(categories) && categories.map((cat, index) => (
@@ -124,4 +163,4 @@ const Menu = () => {
   );
 }
 
-export default Menu;    
+export default Menu; 

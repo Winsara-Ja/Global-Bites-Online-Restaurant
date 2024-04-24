@@ -33,13 +33,13 @@ body {
   height: 100px;
 }
 
-.btn {
+.btn7 {
   border: 2px black solid;
   padding: 6px;
   color: #000;
 }
 
-.btn:hover {
+.btn7:hover {
   background-color: rgb(4, 4, 4);
 }
 
@@ -131,7 +131,7 @@ a:focus::after {
   justify-content: center;
 }
 
-.btn:hover {
+.btn7:hover {
   color: white;
 }
 

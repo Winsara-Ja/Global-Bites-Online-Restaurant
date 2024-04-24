@@ -37,7 +37,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="btn">
+              <a href="#" className="btn7">
                 Order Online
               </a>
             </li>

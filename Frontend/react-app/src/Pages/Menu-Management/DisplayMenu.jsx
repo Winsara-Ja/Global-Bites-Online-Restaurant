@@ -5,6 +5,7 @@ import "./displayMenu.css"
 
 const DisplayMenu = () => {
     const [items, setItems] = useState([]); 
+    const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate()
     useEffect(() => {
       axios
@@ -28,46 +29,60 @@ const DisplayMenu = () => {
       navigate('/addItems')
     }
 
+    const filteredItems = items.filter(item =>
+      item.itemName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
-        <>
-          
-          <div className="menuItems">MANAGE MENU ITEMS</div>
-          <div className="add-button-container">
-            <h3>Add Items Here</h3>
-            <button type="button" onClick={handleAddItem}>Add</button>
-          </div>
-          <div>
-            {items.map((item) => {
-              return (
-                <>
-                  <div className="wrapper">
-                    <div className="product-info">
-                      <div className="product-text">
-                        <h1>{item.itemName}</h1>
-                        <h2>{item.itemId}</h2>
-                      </div>
-                      <div className="img">
-                        <img src={'http://localhost:5000/' + item.image} alt={item.itemName}/>
-                      </div>
-                      <div className="product-text2">
-                        <p>{item.Description}</p>
-                      </div>
-                      <div className="price">Rs.{item.Price}</div>
-                      <div className="product-price-btn">
-                        <button type="button" onClick={() => HandleEdit(item._id)}>
-                          Edit
-                        </button>
-                        <button type="button" onClick={() => handleDelete(item._id)}>
-                          Delete
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              );
-            })}
-          </div>
-        </>
+      <>
+      <div className="menuItems">MANAGE MENU ITEMS</div>
+      <div className="add-button-container">
+        <h1>Add Items Here!</h1>
+        <button type="button" onClick={handleAddItem}>Add</button>
+      </div>
+      <div className="search-container">
+          <input 
+            type="text" 
+            placeholder="Search by item name" 
+            value={searchQuery} 
+            onChange={(e) => setSearchQuery(e.target.value)} 
+          />
+        </div>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Item Id</th>
+              <th>Item Name</th>
+              <th>Item Description</th>
+              <th>Item Category</th>
+              <th>Item country</th>
+              <th>Item Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredItems.map((item) => (
+              <tr key={item._id}>
+                <td>{item.itemId}</td>
+                <td>{item.itemName}</td>
+                <td>{item.Description}</td>
+                <td>{item.category}</td>
+                <td>{item.country}</td>
+                <td>
+                  <img src={'http://localhost:5000/' + item.image} alt={item.itemName} />
+                </td>
+                <td className="button-col">
+                  <button type="button" onClick={() => HandleEdit(item._id)}>Edit</button>
+                  <button type="button" onClick={() => handleDelete(item._id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+    
       );
 }
 

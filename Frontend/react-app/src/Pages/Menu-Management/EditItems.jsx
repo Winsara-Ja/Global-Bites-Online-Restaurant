@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import "./editItems.css"
 import  axios  from 'axios';
-import { ImUpload } from "react-icons/im"
-import { useParams } from 'react-router-dom'
+//import { ImUpload } from "react-icons/im"
+import { useParams, useNavigate } from 'react-router-dom'
 
 const EditItems = () => {
 
   const { id } = useParams();
-  const [itemData, setItemData] = useState(null);
+  const navigate = useNavigate();
+  const [itemData, setItemData] = useState({
+    itemId: "",
+    itemName: "",
+    Description: "",
+    Price: "",
+    category: "",
+    country: "",
+    image: "", 
+  });
 
   useEffect(() => {
-    // Fetch the item data based on the ID from the backend
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/items/${id}`)
+        const response = await axios.get('http://localhost:5000/items/' + id)
         setItemData(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error('Error fetching item data:', error)
       }
@@ -22,74 +31,74 @@ const EditItems = () => {
     fetchData();
   }, [id]);
 
-  const [image, setImage] = useState("") 
-
-  const handleUploadImage = async (e) => {
-    const image = e.target.files[0]
-    setImage(image); // Set the file object to the img state directly
-  };
-  const [formData, setFormData] = useState({
-    itemId: "",
-    itemName: "",
-    Description: "",
-    Price: "",
-    category: "",
-    country: "",
-    image: "",
-    _id: ""
-  });
-
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setItemData(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
 
   const handleUpdate = async(e)=>{
-    e.preventDefault()
-    const data = await axios.put("http://localhost:5000/update/", formData)
-    if(data.data.success){
-      alert(data.data.message)
-    }  
-  }
+    e.preventDefault();
+    try {
 
-
+      const response = await axios.put('http://localhost:5000/update/' + id, itemData)
+      if(response.data.success){
+        navigate('/displayMenu')
+        alert(response.data.message);  
+      }
+    } catch (error) {
+      console.error('Error updating item:', error);
+      alert('Error updating item. Please try again.');
+    }
+  };
 
   return (
-    <div className="updateContainer">
+    <div className="update-item-container">
       <form onSubmit={handleUpdate}>
+
+        <h2>Edit Item Details</h2>
+
         <label htmlFor="itemId">Item Id : </label>
-        <input type="number" id="itemId" name="itemId" onChange={handleOnChange} value={formData.itemId} />
+        <input type="number" id="itemId" name="itemId" onChange={handleOnChange} value={itemData.itemId} required/>
 
         <label htmlFor="itemName">Item Name : </label>
-        <input type="text" id="itemName" name="itemName" onChange={handleOnChange} value={formData.itemName} />
+        <input type="text" id="itemName" name="itemName" onChange={handleOnChange} value={itemData.itemName} required/>
 
         <label htmlFor="Price">Item Price : </label>
-        <input type="number" id="Price" name="Price" onChange={handleOnChange} value={formData.Price} />
+        <input type="number" id="Price" name="Price" onChange={handleOnChange} value={itemData.Price} required/>
 
         <label htmlFor="Description">Item Description : </label>
-        <input type="text" id="Description" name="Description" onChange={handleOnChange} value={formData.Description} />
+        <input type="text" id="Description" name="Description" onChange={handleOnChange} value={itemData.Description} required/>
 
-        <label htmlFor="category">Item Category : </label>
-        <input type="text" id="category" name="category" onChange={handleOnChange} value={formData.category} />
+        <label htmlFor="category">Item Category:</label>
+              <select id="category" name="category" onChange={handleOnChange} value={itemData.category}>
+                <option value="Salad">Salad</option>
+                <option value="Rolls">Rolls</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Bites">Bites</option>
+              </select>
 
-        <label htmlFor="country">Item Country : </label>
-        <input type="text" id="country" name="country" onChange={handleOnChange} value={formData.country} />
+            <label htmlFor="country">Item Country:</label>
+              <select id="country" name="country" onChange={handleOnChange} value={itemData.country}>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+            </select>
 
-        <label htmlFor="image">
-          <div className="uploadBox">
-            <input type="file" id="image" onChange={handleUploadImage} />
-            {formData.image ? <img src={URL.createObjectURL(formData.image)} alt="Uploaded Image" /> : <ImUpload />}
-          </div>
-        </label>
-        <div className="food-image-label-container">
-          <label className="food-image-label">Food image</label>
+        <div className="food-image-container">
+          <img src={`http://localhost:5000/${itemData.image}`} alt="Food" />
         </div>
-
-        <button className="btn">Update</button>
+        <div className="button-container">
+          <button className="btn">Update</button>
+        </div>
+        
       </form>
+      
     </div>
   );
 }

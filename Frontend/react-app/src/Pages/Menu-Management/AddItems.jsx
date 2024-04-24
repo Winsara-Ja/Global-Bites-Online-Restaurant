@@ -62,38 +62,57 @@ const AddItems = () => {
 };
 
   return (
-    <div className="addContainer">
+    <div className="add-item-container">
         <form onSubmit={handleSubmit}>
 
+            <h2>Add Items</h2>
+
             <label htmlFor="itemId">Item Id : </label>
-            <input type="number" id="itemId" name="itemId"  onChange={handleOnChange} value={formData.itemId}/>
+            <input type="number" id="itemId" name="itemId"  onChange={handleOnChange} value={formData.itemId} required/>
 
             <label htmlFor="itemName">Item Name : </label>
-            <input type="text" id="itemName" name="itemName"  onChange={handleOnChange} value={formData.itemName}/>
+            <input type="text" id="itemName" name="itemName"  onChange={handleOnChange} value={formData.itemName} required/>
 
             <label htmlFor="Price">Item Price : </label>
-            <input type="number" id="Price" name="Price"  onChange={handleOnChange} value={formData.Price}/>
+            <input type="number" id="Price" name="Price"  onChange={handleOnChange} value={formData.Price} required/>
 
             <label htmlFor="Description">Item Description : </label>
-            <input type="text" id="Description" name="Description"  onChange={handleOnChange} value={formData.Description}/>
+            <textarea id="Description" name="Description"  onChange={handleOnChange} value={formData.Description} required/>
 
-            <label htmlFor="category">Item Category : </label>
-            <input type="text" id="category" name="category"  onChange={handleOnChange} value={formData.category}/>
+            <label htmlFor="category">Item Category:</label>
+              <select id="category" name="category" onChange={handleOnChange} value={formData.category}>
+                <option value="">Select</option>
+                <option value="Salads">Salads</option>
+                <option value="Appitizers">Appitizers</option>
+                <option value="Mains">Mains</option>
+                <option value="Sides">Sides</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Soups">Soups</option>
+              </select>
 
-            <label htmlFor="country">Item Country : </label>
-            <input type="text" id="country" name="country"  onChange={handleOnChange} value={formData.country}/>
+            <label htmlFor="country">Item Country:</label>
+              <select id="country" name="country" onChange={handleOnChange} value={formData.country}>
+                <option value="">Select</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+            </select>
 
             <label htmlFor="image">
               <div className="uploadBox">
-                <input type="file" id="image" onChange={handleUploadImage} />
+                <input type="file" id="image" onChange={handleUploadImage} required/>
                 {image ? <img src={URL.createObjectURL(image)} alt="Uploaded Image" /> : <ImUpload />}
               </div>
             </label>
             <div className="food-image-label-container">
               <label className="food-image-label">Food image</label>
             </div>  
-
-            <button className="btn">Submit</button>
+            <div className="button-container">
+              <button className="btn1">Submit</button>
+            </div>
+            
 
         </form>
     </div>

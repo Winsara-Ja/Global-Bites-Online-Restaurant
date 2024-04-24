@@ -44,19 +44,35 @@ const createItem = async (req, res) => {
 }
 
 const deleteItem = async (req, res) => {
-  const id = req.params.id
-    console.log(id)
+  try{
+    const id = req.params.id
     const data = await Items.deleteOne({_id : id})
     res.send({success : true, message : "data deleted successfully", data : data})
+  }catch (error){
+    res.status(500).json({ success: false, message: error.message })
+  }
+    
 }
 
 const updateItem = async (req, res) => {
-  console.log(req.body)
-    const { id,...rest} = req.body
 
-    console.log(rest)
-    const data = await Items.updateOne({_id : _id}, rest)
+  const id = req.params.id
+  const {itemId, itemName, Description, Price, category, country, image} = req.body
+  try{
+    const data = await Items.findByIdAndUpdate( id, {
+      itemId: itemId,
+      itemName: itemName,
+      Description: Description,
+      Price: Price,
+      category: category,
+      country: country,
+      image: image
+    })
     res.send({success : true, message : "data updated successfully", data : data})
+  }catch (error) {
+    res.status(500).json({ success: false, message: error.message })
+  }
+    
 };
 
   

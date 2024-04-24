@@ -48,6 +48,7 @@ body {
   color: #262626;
   letter-spacing: 0.2em;
   text-align: center;
+  display: none;
 }
 
 .product-text p {
@@ -135,8 +136,8 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-   max-width: 100%;
-   color: #808080;
+  max-width: 100%;
+  color: #808080;
 }
 .explore-menu-list{
    display: flex;
@@ -150,18 +151,12 @@ body {
 .explore-menu-list::-webkit-scrollbar{
    display: none;
 }
-.explore-menu-list-item img{
-   width: 7.5vw;
-   min-width: 80px;
-   cursor: pointer;
-   border-radius: 50%;
-   transition: 0.2s;
-}
 .explore-menu-list-item p{
    margin-top: 10px;
-   color: #747474;
+   color: #262626;
    font-size: max(1.4vw,16px);
    cursor: pointer;
+   font-weight: 600;
 }
 .explore-menu hr{
    margin: 10px 0px;
@@ -174,14 +169,44 @@ body {
    padding: 2px;
 }
 .search-bar{
-  min-width: 70%;
+  min-width: 50%;
   height: 30px;
   border-radius: 15px;
   align-items: center;
 }
 .search-bar-container{
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  gap: 20px;
+}
+.price-range-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  align-items: center;
+}
+.price-range-container input{
+  height: 30px;
+  border-radius: 15px;
+}
+.price-range-container button{
+  display: inline-block;
+  height: 30px;
+  width: 65px;
+  box-sizing: border-box;
+  border: transparent;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #010101;
+  background-color: #d4dd97e8;
+  cursor: pointer;
+  outline: none;
 }
 @media (max-width:1050px){
    .explore-menu-text{

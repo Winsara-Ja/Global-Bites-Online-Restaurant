@@ -9,6 +9,6 @@ router.post("/create", upload.single("image"), createItem)
 router.get("/items", getAllItems)
 router.get("/items/:id", getSingleItem)
 router.delete("/delete/:id", deleteItem)
-router.put("/update", updateItem)
+router.put("/update/:id", updateItem)
 
 module.exports = router
