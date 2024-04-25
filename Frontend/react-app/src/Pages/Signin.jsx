@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Signin.css";
 import {
   signInStart,
   signInSuccess,
@@ -41,7 +42,7 @@ const SignIn = () => {
   };
   return (
     <>
-      <div className='bg-cover bg-[url("/signin.jpeg")] bg-opacity-10 p-20 h-screen'>
+      {/* <div className='bg-cover bg-[url("/signin.jpeg")] bg-opacity-10 p-20 h-screen'>
         <div className="p-5 max-w-lg mx-auto mb-20 bg-white  rounded-2xl">
           <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
           <form className=" flex flex-col gap-4 " onSubmit={handleSubmit}>
@@ -81,7 +82,53 @@ const SignIn = () => {
             {error ? error.message || "Something went wrong!" : ""}
           </p>
         </div>
+      </div> */}
+      <div className="container">
+        <div className="user_login">
+          <h2>Login To Your Account</h2>
+          <form onSubmit={handleSubmit}>
+            <p className="p">Email</p>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              id="email"
+              onChange={handleChange}
+            />
+            <p className="p">password</p>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter a Password"
+              onChange={handleChange}
+            />
+            <br />
+            <Link to="/forgotpassword">
+              <p className="trouble">Forgot password?</p>
+            </Link>
+            <button className="btn" disabled={loading}>
+              {loading ? "Loading..." : "Sign In"}
+            </button>
+          </form>
+          <div className="signin">-— or Sign in with —-</div>
+          <span id="Signinbtn">
+            <div id="customBtn">
+              <span className="icon"></span>
+              <span className="buttonText">Google</span>
+            </div>
+            <div id="customBtn1">
+              <span className="icon1"></span>
+              <span className="buttonText1">Facebook</span>
+            </div>
+          </span>
+        </div>
       </div>
+      <p className="info">
+        Doesn't Have an Account{" "}
+        <Link to="/signup">
+          <b>Sign Up</b>
+        </Link>{" "}
+        here
+      </p>
     </>
   );
 };

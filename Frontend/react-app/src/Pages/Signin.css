@@ -16,9 +16,9 @@ body {
 
 .user_login {
   border-radius: 8px;
-  width: 345px;
+  width: 375px;
   min-width: 345px;
-  height: 535px;
+  height: 560px;
   background-color: hsla(0, 0%, 100%, 0.98);
   box-sizing: border-box;
   margin: auto;
@@ -47,9 +47,9 @@ body {
 
 .user_login input {
   margin: 4px;
-  margin-left: 25px;
-  padding: 12px;
-  width: 75%;
+  margin-left: 28px;
+  padding: 8px;
+  width: 85%;
   border: 1px solid;
 }
 
@@ -58,7 +58,7 @@ body {
   font-weight: bold;
   background-color: gold;
   border-radius: 2px;
-  margin: 10px 75px auto 75px;
+  margin: 10px 75px auto 80px;
   padding: 10px;
   width: 50%;
   height: 40px;
@@ -104,7 +104,7 @@ a:hover {
 }
 
 #customBtn {
-  margin: 16px 8px 16px 40px;
+  margin: 16px 8px 16px 50px;
   display: inline-block;
   background: white;
   color: #444;

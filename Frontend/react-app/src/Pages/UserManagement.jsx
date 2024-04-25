@@ -6,37 +6,37 @@ import "./history.css";
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'column',
+    flexDirection: "column",
     padding: 20,
   },
   table: {
-    display: 'table',
-    width: '100%',
-    borderStyle: 'solid',
+    display: "table",
+    width: "100%",
+    borderStyle: "solid",
     borderWidth: 1,
     borderRightWidth: 0,
     borderBottomWidth: 0,
   },
   tableRow: {
-    margin: 'auto',
-    flexDirection: 'row',
-    backgroundColor: '#E0E0E0',
+    margin: "auto",
+    flexDirection: "row",
+    backgroundColor: "#E0E0E0",
   },
   tableColHeader: {
-    width: '25%',
-    borderStyle: 'solid',
+    width: "25%",
+    borderStyle: "solid",
     borderBottomWidth: 1,
   },
   tableCol: {
-    width: '25%',
-    borderStyle: 'solid',
+    width: "25%",
+    borderStyle: "solid",
     borderBottomWidth: 0.5,
   },
   actionCol: {
-    width: '25%',
-    borderStyle: 'solid',
+    width: "25%",
+    borderStyle: "solid",
     borderBottomWidth: 0.5,
-    textAlign: 'center',
+    textAlign: "center",
   },
 });
 
@@ -49,11 +49,10 @@ const UserManagement = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.user.currentUser);
 
-
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(" http://localhost:3000/api/user/users");
+        const response = await fetch(" http://localhost:5000/users");
         if (!response.ok) {
           throw new Error("Failed to fetch users");
         }
@@ -75,13 +74,16 @@ const UserManagement = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/user/updateone/${editingUser._id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editingUser),
-      });
+      const response = await fetch(
+        `http://localhost:5000/updateone/${editingUser._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(editingUser),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to update user");
       }
@@ -94,9 +96,10 @@ const UserManagement = () => {
   };
 
   const deleteUser = async (id) => {
-
     try {
-      const confirmDelete = window.confirm("Are you sure you want to delete this user?");
+      const confirmDelete = window.confirm(
+        "Are you sure you want to delete this user?"
+      );
       if (!confirmDelete) {
         return;
       }
@@ -105,7 +108,7 @@ const UserManagement = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:3000/api/user/deleteone/${id}`, {
+      const response = await fetch(`http://localhost:5000/deleteone/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +125,10 @@ const UserManagement = () => {
   };
 
   const totalPages = Math.ceil(users.length / PAGE_SIZE);
-  const paginatedUsers = users.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const paginatedUsers = users.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -151,38 +157,54 @@ const UserManagement = () => {
             </div>
             {editingUser ? ( // Render the form if editingUser is not null
               <div className='bg-cover bg-[url("/profile.jpeg")]  p-8 h- min-h-screen'>
-                <div className='p-3 max-w-lg mx-auto bg-white rounded-2xl'>
-                  <h1 className='text-3xl font-semibold text-center my-7'>Update user</h1>
-                  <form className='flex flex-col gap-4' onSubmit={handleSubmit} >
+                <div className="p-3 max-w-lg mx-auto bg-white rounded-2xl">
+                  <h1 className="text-3xl font-semibold text-center my-7">
+                    Update user
+                  </h1>
+                  <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                     <input
                       type="text"
-                      id='username'
-                      placeholder='Username'
+                      id="username"
+                      placeholder="Username"
                       value={editingUser.username}
-                      onChange={(e) => setEditingUser({ ...editingUser, username: e.target.value })}
-                      className='bg-slate-100 rounded-lg p-3'
+                      onChange={(e) =>
+                        setEditingUser({
+                          ...editingUser,
+                          username: e.target.value,
+                        })
+                      }
+                      className="bg-slate-100 rounded-lg p-3"
                     />
                     <input
                       type="text"
-                      id='address'
-                      placeholder='Address'
+                      id="address"
+                      placeholder="Address"
                       value={editingUser.address}
-                      onChange={(e) => setEditingUser({ ...editingUser, address: e.target.value })}
-                      className='bg-slate-100 rounded-lg p-3'
+                      onChange={(e) =>
+                        setEditingUser({
+                          ...editingUser,
+                          address: e.target.value,
+                        })
+                      }
+                      className="bg-slate-100 rounded-lg p-3"
                     />
                     <input
                       type="email"
-                      id='email'
-                      placeholder='Email'
+                      id="email"
+                      placeholder="Email"
                       value={editingUser.email}
-                      onChange={(e) => setEditingUser({ ...editingUser, email: e.target.value })}
-                      className='bg-slate-100 rounded-lg p-3'
+                      onChange={(e) =>
+                        setEditingUser({
+                          ...editingUser,
+                          email: e.target.value,
+                        })
+                      }
+                      className="bg-slate-100 rounded-lg p-3"
                     />
-                    <button className='bg-[#f0b20a] bg-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-                      {'Update'}
+                    <button className="bg-[#f0b20a] bg-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+                      {"Update"}
                     </button>
                   </form>
-
                 </div>
               </div>
             ) : (
@@ -202,24 +224,42 @@ const UserManagement = () => {
                       <td>{user.email}</td>
                       <td>{user.address}</td>
                       <td className="flex space-x-2">
-                        <button onClick={() => { handleUpdateUser(user) }} className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Update</button>
-                        <button onClick={() => deleteUser(user._id)} className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Delete</button>
+                        <button
+                          onClick={() => {
+                            handleUpdateUser(user);
+                          }}
+                          className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+                        >
+                          Update
+                        </button>
+                        <button
+                          onClick={() => deleteUser(user._id)}
+                          className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+                        >
+                          Delete
+                        </button>
                       </td>
-
                     </tr>
                   ))}
                 </tbody>
               </table>
             )}
             <div className="flex justify-center">
-              <button onClick={prevPage} disabled={currentPage === 1} className="bg-green-500 text-white py-1 px-4 rounded mr-2 w-30 h-9">
+              <button
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                className="bg-green-500 text-white py-1 px-4 rounded mr-2 w-30 h-9"
+              >
                 &lt;&lt; Previous
               </button>
-              <button onClick={nextPage} disabled={currentPage === totalPages} className="bg-green-500 text-white py-1 px-4 rounded w-30 h-9">
+              <button
+                onClick={nextPage}
+                disabled={currentPage === totalPages}
+                className="bg-green-500 text-white py-1 px-4 rounded w-30 h-9"
+              >
                 Next &gt;&gt;
               </button>
             </div>
-
           </div>
         </div>
       </div>

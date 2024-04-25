@@ -64,13 +64,16 @@ const Profile = () => {
     e.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/update/${currentUser._id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(FormData),
-      });
+      const res = await fetch(
+        `http://localhost:5000/update/${editingUser._id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(FormData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         dispatch(updateUserFailure(data));
@@ -104,7 +107,7 @@ const Profile = () => {
             onChange={(e) => setImage(e.target.files[0])}
           />
           <img
-            src={FormData.profilePicture || currentUser.profilePicture}
+            src="/account.png"
             alt=""
             className="h-24 w-24 mt-2 self-center bg-slate-200 rounded-full cursor-pointer object-cover"
             onClick={() => fileRef.current.click()}
@@ -155,11 +158,11 @@ const Profile = () => {
             className="bg-slate-100 rounded-lg p-3"
             onChange={handleChange}
           />
-          <button className="bg-[#f0b20a] bg-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80">
+          <button className="bg-[#f6e656] bg-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 w-full">
             {loading ? "Loading" : "Update"}
           </button>
         </form>
-        <div className="flex justify-between mt-5">
+        <div className="flex justify-center mt-5">
           <span onClick={handleSignOut} className="text-red-600 cursor-pointer">
             Sign out
           </span>
