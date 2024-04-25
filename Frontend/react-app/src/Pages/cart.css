@@ -32,10 +32,6 @@
   align-items: center;
 }
 
-img {
-  padding: 12px;
-}
-
 .img {
   display: flex;
   height: 145px;

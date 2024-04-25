@@ -1,10 +1,6 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx";
-import Register from "./Pages/Register.jsx";
-import Profile from "./Pages/Profile.jsx";
 import { UserContextProvider } from "../context/userContext.jsx";
 import { Toaster } from "react-hot-toast";
 import Cart from "./Pages/Cart.jsx";
@@ -25,6 +21,14 @@ import AdminHome from "./Pages/AdminHome.jsx";
 import Menu from "./Pages/Menu.jsx";
 import OrderDashboard from "./Pages/Managers/OrderDashboard.jsx";
 import MenuandOffer from "./Pages/Managers/MenuandOffer.jsx";
+import Profile from "./Pages/Profile";
+import Signin from "./Pages/Signin";
+import SignUp from "./Pages/SignUp";
+import History from "./Pages/SigninHistory";
+import PrivateRoute from "./components/PrivateRoute";
+import ResetPassword from "./Pages/ResetPassword";
+import ForgotPassword from "./Pages/ForgotPassword";
+import UserManagement from "./Pages/UserManagement";
 
 axios.defaults.withCredentials = true;
 
@@ -34,9 +38,15 @@ function App() {
       <Toaster position="top-left" toastOptions={{ duration: 3000 }} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/userMgmt" element={<UserManagement />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
         <Route path="/addItems" element={<AddItems />} />

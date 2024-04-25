@@ -5,10 +5,12 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useDispatch, useSelector } from "react-redux";
 import "./cart.css";
 
 const Cart = () => {
-  const userID = "65fbed61c95e1f3dcf41d084";
+  const { currentUser, loading, error } = useSelector((state) => state.user);
+  const userID = currentUser._id;
   const UserName = "Jayana";
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();

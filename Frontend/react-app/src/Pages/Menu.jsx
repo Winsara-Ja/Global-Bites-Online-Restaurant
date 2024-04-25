@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Menu.css";
 import Header from "../components/Header";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 
 const Menu = () => {
-  const userID = "65fbed61c95e1f3dcf41d084";
+  const { currentUser, loading, error } = useSelector((state) => state.user);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
@@ -14,6 +15,7 @@ const Menu = () => {
   const [Quantity, setQuantity] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
+  const userID = currentUser._id;
 
   useEffect(() => {
     axios
@@ -127,7 +129,7 @@ const Menu = () => {
             className="search-bar"
           />
           <div className="price-range-container">
-            <label>Price Range:</label>
+            <label className="price-range-lable">Price Range:</label>
             <input
               type="number"
               name="min"
@@ -142,7 +144,9 @@ const Menu = () => {
               onChange={handlePriceRangeChange}
               placeholder="Max"
             />
-            <button onClick={filterItemsByPriceRange}>Apply</button>
+            <button onClick={filterItemsByPriceRange} className="filter-btn">
+              Apply
+            </button>
           </div>
         </div>
 
@@ -175,6 +179,7 @@ const Menu = () => {
                     <img
                       src={"http://localhost:5000/" + item.image}
                       alt={item.itemName}
+                      className="menu-image"
                     />
                   </div>
                   <div className="product-text2">

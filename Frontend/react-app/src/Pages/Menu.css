@@ -109,11 +109,9 @@ body {
   font-weight: 500;
 }
 
-.img {
-  display: flex;
-  height: 145px;
-  justify-content: center;
-}
+/* .menu-image img {
+  width: 100%;
+} */
 
 .menuItems {
   font-size: 2rem;
@@ -192,6 +190,16 @@ body {
 .price-range-container input {
   height: 35px;
   border: 1px solid black;
+  width: 120px;
+}
+.price-range-lable {
+  width: 120px;
+}
+.filter-btn {
+  width: 90px;
+  height: 35px;
+  background-color: gold;
+  text-align: center;
 }
 .price-range-container button {
   font-family: "JetBrains Mono", monospace;

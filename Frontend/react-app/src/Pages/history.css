@@ -1,0 +1,67 @@
+.card {
+  margin: auto;
+  border: transparent;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart {
+  background-color: #fcfcfc;
+  padding: 2vh;
+  width: 100%;
+}
+
+.h1 {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to left, #fbf709, #e07f24, #7c6e00);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+}
+
+#history {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#history td,
+#history th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#history tr:hover {
+  background-color: #ddd;
+}
+
+#history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #616161;
+  color: white;
+}
+
+.btn1 {
+  border: 2px black solid;
+  padding: 6px;
+  color: #000;
+  max-width: 20%;
+  margin-left: 80%;
+}
+
+.btn1:hover {
+  background-color: rgb(4, 4, 4);
+}
+
+.btn1:hover {
+  color: white;
+}

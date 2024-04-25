@@ -1,0 +1,30 @@
+.page {
+  flex-Direction: row;
+  background-Color: #E4E4E4;
+}
+
+.section {
+  margin: 10;
+  padding: 10;
+  flex-grow: 1;
+}
+
+.tableRow {
+  flex-direction: row;
+}
+
+.tableHeader {
+  border-bottom-color: #000;
+  border-bottom-width: 1;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.tableCell {
+  border-bottom-color: #000;
+  border-bottom-width: 1;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
