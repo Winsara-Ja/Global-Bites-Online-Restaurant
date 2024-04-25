@@ -1,4 +1,4 @@
-const Items = require("../models/Items")
+const Items = require("../models/Items");
 
 const getAllItems = async (req, res) => {
     try {
