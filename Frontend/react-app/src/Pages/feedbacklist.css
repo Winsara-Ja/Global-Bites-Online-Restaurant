@@ -1,0 +1,154 @@
+.FBlistbackground{
+    min-height: 729px; 
+    background-color:whitesmoke; 
+}
+
+.FBpage{
+    margin-top: 6.2rem;
+    margin-left: 30%;
+    box-sizing: border-box;
+    transform: translate(-50% -50%);
+}
+
+.FBpage{
+    width: 40%;
+	padding: 35px;
+	background: rgb(165, 164, 158);
+}
+
+.FBtitlet{
+    
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    text-size-adjust: 20px;
+}
+
+.FBcomment{
+    
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(50, 44, 44);
+    font-size: 24px;
+    text-size-adjust: 20px;
+}
+
+.FBbox{
+    width: 100%;
+    padding: 7px;
+    margin-top:18px;
+    margin-bottom:40px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius:4px;
+}
+
+.feedback {
+    padding:15px;
+    border-radius:7px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-width: 2px;
+    border-style: solid;
+}
+
+.feedback{
+    background-color: #634c39; 
+    border-color: #ed8936;
+}
+
+.FBlistIcon{
+    width:30px;
+    height:30px;
+    margin-right:5px;
+}
+
+.FBlistName{
+    color: #ffffff;
+}
+
+.FBbutton{
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    margin-right: 0.5rem;
+    color: #3182ce;
+    background-color: transparent;
+    border: 1px solid #3182ce;
+    border-radius:4px;
+    text-decoration: none; /* To remove underline */
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+.FBbutton:hover {
+    background-color: #3182ce;
+    color: #fff;
+}
+
+.FBbutton2{
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    color: #dc2626; /* text-red-500 equivalent */
+    background-color: transparent;
+    border: 1px solid #dc2626; /* border-red-500 equivalent */
+    border-radius:4px;
+    text-decoration: none; /* To remove underline */
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+.FBbutton2:hover {
+    background-color: #dc2626; /* hover:bg-red-500 equivalent */
+    color: #fff; /* hover:text-white equivalent */
+}
+
+.FBlist{
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    color: #1a202c; 
+    font-size:14px;
+    padding:10px; 
+    border-radius:4px;
+    width: 100%;
+}
+
+.FBbtn{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.FeedbackButton{
+    text-align: center;
+}
+
+.FeedbackButton{
+    font-family: sans-serif;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
+    background:gold;
+    width: 100px;
+    height: 45px;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.FeedbackButton:hover, .FeedbackButton:focus, .FeedbackButton:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background:black;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.myfeed-btn{
+    width: 100px;
+    height: 45px;
+    background-color: gold;
+}

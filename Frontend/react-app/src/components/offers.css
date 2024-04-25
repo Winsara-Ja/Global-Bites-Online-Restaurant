@@ -1,0 +1,54 @@
+.offers-tital {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+}
+
+.img1 {
+  width: 480px;
+  height: 340px;
+  margin: 20px;
+  background: url("/3.jpg") no-repeat;
+  background-size: contain;
+}
+
+.img2 {
+  width: 380px;
+  height: 250px;
+  margin: 20px;
+  background: url("/4.jpg") no-repeat;
+  background-size: contain;
+}
+
+.offers-btn {
+  width: 375px;
+  height: 48px;
+  margin: 20px;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: large;
+  font-family: "jetbrains mono", monospace;
+  background-color: #ffe40b;
+}
+
+.offers-btn:hover {
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+.offer-title {
+  color: white;
+  padding: 8px;
+  font-size: larger;
+}
+
+.offer-info {
+  color: white;
+  padding: 10px;
+}

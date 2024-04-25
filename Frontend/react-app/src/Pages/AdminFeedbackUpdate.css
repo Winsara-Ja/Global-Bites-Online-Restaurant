@@ -1,0 +1,72 @@
+.FBAdminbackground{
+    min-height: 729px; 
+    background-color: #3f4553; 
+}
+
+.FBupdateHead{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-size-adjust: 20px;
+}
+
+.FBAdminHead{
+    margin-bottom: 0.75rem;
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ed8936;
+}
+
+.box{
+    margin-top: 5%;
+    margin-left: 33%;
+    position: absolute;
+    box-sizing: border-box;
+    transform: translate(-50% -50%);
+}
+
+.box{
+    width: 32%;
+	padding: 35px;
+	background: rgb(239, 209, 7);
+}
+
+.Feedback{
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    color: #1a202c; 
+    font-size:14px;
+    padding:10px; 
+    border-radius:10px;
+    width: 100%;
+}
+
+.FBUpdateButton{
+    text-align: center;
+}
+
+.FBUpdateButton{
+    font-family: sans-serif;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
+    background:orangered;
+    width: 80px;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.FBUpdateButton:hover, .FBUpdateButton:focus, .FBUpdateButton:active{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background:blue;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}

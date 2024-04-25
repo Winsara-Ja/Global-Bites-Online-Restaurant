@@ -1,0 +1,89 @@
+.offers2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+.add-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 50px;
+}
+.add-button-container button {
+  display: inline-block;
+  height: 40px;
+  width: 160px;
+  box-sizing: border-box;
+  border: transparent;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #010101;
+  background-color: #fffb0be8;
+  cursor: pointer;
+  outline: none;
+}
+.add-button-container button:hover {
+  background-color: #010101;
+  color: #fffffffb;
+}
+
+/* Style for the table */
+.table-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style for table header */
+th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Style for table cells */
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for image */
+img {
+  width: 100px;
+  height: auto;
+}
+
+/* Style for action buttons */
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #fffb0be8;
+  color: #010101;
+  border: none;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+}
+
+button:hover {
+  background-color: #010101;
+  color: #fffffffb;
+}

@@ -1,0 +1,99 @@
+.FBUser{
+    min-height: 729px; 
+    background-color: whitesmoke; 
+}
+
+.FBnew{
+    padding:50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:1400px;
+}
+
+.FBdesign{
+    position: relative;
+    overflow-x: auto;
+    top: 40px;
+}
+
+.UserFB{
+    
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #ed8936; 
+}
+
+.FBtable{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius:10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.FBHead{
+    font-size:25px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    background-color: #494242;
+    color: #ffffff;
+}
+
+.FBbody{
+    font-size:16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.FBtableRow{
+    border-bottom: 1px solid #e2e8f0;
+}
+  
+.FBtableRow:hover {
+    background-color: #f9fafb;
+}
+
+.tablecell{
+    padding: 15px 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tablecell1{
+    padding:15px 20px;
+    text-align:center;
+}
+
+.FBlink{
+    display: inline-block;
+    padding: 7px 12px;
+    margin-right:5px;
+    color: #04ad28;
+    border: 1px solid #04ad28;
+    border-radius:4px;
+    transition: color 0.3s, border-color 0.3s;
+    text-decoration: none;
+}
+  
+.FBlink:hover {
+    color: #4c51bf;
+    border-color: #4c51bf;
+}
+
+.FBlink1{
+    display: inline-block;
+    padding: 7px 12px;
+    margin-right:5px;
+    color: #ad7704;
+    border: 1px solid #ad7704;
+    border-radius:4px;
+    transition: color 0.3s, border-color 0.3s;
+    text-decoration: none;
+}
+  
+.FBlink1:hover {
+    color: #b42123; 
+    border-color: #b42123;
+}

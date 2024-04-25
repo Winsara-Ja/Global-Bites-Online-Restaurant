@@ -1,0 +1,212 @@
+body {
+  background-color: #fcfcfc;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.wrapper {
+  margin-left: 58px;
+}
+
+.product-img {
+  float: left;
+  height: 420px;
+  width: 327px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+  float: left;
+  height: 430px;
+  width: 310px;
+  margin: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.product-text h1 {
+  margin: 0 0 0 20px;
+  padding-top: 10px;
+  font-size: 28px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.product-text h2 {
+  margin: 0 0 10px 38px;
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  letter-spacing: 0.2em;
+  text-align: center;
+  display: none;
+}
+
+.product-text p {
+  height: 125px;
+  margin: 10px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  color: #262626;
+  line-height: 1.7em;
+  font-size: 12px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-text2 p {
+  margin: 10px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 12px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.product-price-btn button {
+  display: inline-block;
+  height: 44px;
+  width: 160px;
+  box-sizing: border-box;
+  border: transparent;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #010101;
+  background-color: #fffb0be8;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #010101;
+  color: #fffffffb;
+}
+
+.price {
+  text-align: center;
+  padding: 8px;
+  font-size: large;
+  font-weight: 500;
+}
+
+/* .menu-image img {
+  width: 100%;
+} */
+
+.menuItems {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.explore-menu h1 {
+  color: #262626;
+  font-weight: 500;
+  text-align: center;
+}
+.explore-menu-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 100%;
+  color: #808080;
+  margin-top: 0px;
+}
+.explore-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  overflow-x: scroll;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.explore-menu-list::-webkit-scrollbar {
+  display: none;
+}
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #262626;
+  font-size: max(1.4vw, 16px);
+  cursor: pointer;
+  font-weight: 600;
+}
+.explore-menu hr {
+  margin: 10px 0px;
+  height: 2px;
+  background-color: #e2e2e2;
+  border: none;
+}
+.explore-menu-list-item .active {
+  border: 4px solid tomato;
+  padding: 2px;
+}
+.search-bar {
+  min-width: 50%;
+  height: 35px;
+  border: 1px solid black;
+  align-items: center;
+}
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.price-range-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  align-items: center;
+}
+.price-range-container input {
+  height: 35px;
+  border: 1px solid black;
+  width: 120px;
+}
+.price-range-lable {
+  width: 120px;
+}
+.filter-btn {
+  width: 90px;
+  height: 35px;
+  background-color: gold;
+  text-align: center;
+}
+.price-range-container button {
+  font-family: "JetBrains Mono", monospace;
+}
+@media (max-width: 1050px) {
+  .explore-menu-text {
+    max-width: 100%;
+    font-size: 14px;
+  }
+}
