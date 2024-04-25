@@ -33,6 +33,7 @@ const Order = () => {
   return (
     <>
       <Header />
+      <div className="emptyspace"></div>
       <div className="searchbox">
         <input
           type="text"

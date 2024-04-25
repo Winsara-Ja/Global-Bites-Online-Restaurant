@@ -77,7 +77,7 @@ export const manager_list = [
     image: Offer,
   },
   {
-    route: 8,
+    route: "userdashboard",
     name: "User Management",
     image: User,
   },

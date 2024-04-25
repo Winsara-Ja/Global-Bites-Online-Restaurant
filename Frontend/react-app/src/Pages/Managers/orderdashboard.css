@@ -2,8 +2,12 @@
   width: 120px;
   height: 50px;
   border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: bold;
   background-color: gold;
+  font-size: small;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .report-btn:hover {
@@ -42,7 +46,7 @@
   color: #088608;
   padding: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }
@@ -52,7 +56,7 @@
   color: #ec0000bd;
   padding: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }
@@ -62,7 +66,7 @@
   color: gold;
   padding: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }
@@ -203,4 +207,8 @@
 .orderm-header-img {
   width: 40px;
   height: 40px;
+}
+
+.separator {
+  margin-bottom: 20px;
 }

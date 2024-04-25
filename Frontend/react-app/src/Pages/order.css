@@ -1,6 +1,7 @@
 .order-summary {
   width: 75%;
   margin: auto;
+  margin-bottom: 20px;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -20,7 +21,7 @@
   padding: 10px;
   margin: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }
@@ -31,7 +32,7 @@
   padding: 10px;
   margin: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }
@@ -42,7 +43,7 @@
   padding: 10px;
   margin: 10px;
   width: 120px;
-  height: 20px;
+  height: 40px;
   text-align: center;
   background-color: #9f9f9e;
 }

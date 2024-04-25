@@ -113,6 +113,7 @@ const Menu = () => {
   return (
     <>
       <Header />
+      <div className="emptyspace"></div>
       <div className="explore-menu" id="explore-menu">
         <h1>Explore our menu</h1>
         <p className="explore-menu-text">

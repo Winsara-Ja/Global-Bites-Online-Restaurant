@@ -48,7 +48,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/AboutUs" className="list-item1">
+              <a href="/manager/userdashboard" className="list-item1">
                 User
               </a>
             </li>

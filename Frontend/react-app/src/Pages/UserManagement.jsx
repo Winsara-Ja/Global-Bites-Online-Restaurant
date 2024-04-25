@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
+import ManagerHeader from "./Managers/ManagerHeader";
 import { StyleSheet } from "@react-pdf/renderer";
 import { useDispatch, useSelector } from "react-redux";
 import "./history.css";
@@ -144,7 +144,7 @@ const UserManagement = () => {
 
   return (
     <>
-      <Header />
+      <ManagerHeader />
       <div className="card">
         <div className="cart">
           <div className="title">

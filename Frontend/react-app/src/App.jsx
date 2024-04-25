@@ -29,6 +29,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import ResetPassword from "./Pages/ResetPassword";
 import ForgotPassword from "./Pages/ForgotPassword";
 import UserManagement from "./Pages/UserManagement";
+import UserDashboard from "./Pages/Managers/UserDashboard.jsx";
 
 axios.defaults.withCredentials = true;
 
@@ -63,6 +64,10 @@ function App() {
         <Route path="/Italy" element={<Italy />}></Route>
         <Route path="/Spain" element={<Spain />}></Route>
         <Route path="/adminHome" element={<AdminHome />}></Route>
+        <Route
+          path="/manager/userdashboard"
+          element={<UserDashboard />}
+        ></Route>
         <Route path="/manager/menuDashboard" element={<MenuandOffer />}></Route>
         <Route
           path="/manager/orderdashboard"

@@ -15,7 +15,7 @@
   background-color: #ddd;
   padding: 4vh;
   color: rgb(65, 65, 65);
-  width: 400px;
+  width: 420px;
   height: 100vh;
 }
 
@@ -81,7 +81,7 @@
 
 .apply {
   width: 70px;
-  height: 41px;
+  height: 36px;
   border: none;
   background: black;
   color: white;
@@ -196,11 +196,11 @@
 }
 
 .my-orders {
-  margin-left: 148px;
+  margin-left: 120px;
 }
 
 .my-orders-btn {
-  width: 90px;
+  width: 100px;
   height: 40px;
   border: none;
   background-color: black;

@@ -82,6 +82,7 @@ const Cart = () => {
   return (
     <>
       <Header />
+      <div className="emptyspace"></div>
       <div className="card">
         <div className="cart">
           <div className="title">
@@ -165,7 +166,7 @@ const Cart = () => {
           </div>
           <hr />
           <div className="row">
-            <div className="col text-right">Do you have a Promo Code</div>
+            <div className="text-right1">Do you have a Promo Code</div>
             <input className="promo"></input>
             <span>
               <button className="apply">Apply</button>

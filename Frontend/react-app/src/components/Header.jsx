@@ -44,21 +44,6 @@ const Header = () => {
                   Order Catering
                 </a>
               </li>
-              <li>
-                {currentUser && currentUser.isAdmin && (
-                  <a className="btn" href="/userMgmt">
-                    {" "}
-                    User-Management
-                  </a>
-                )}
-              </li>
-              <li>
-                {currentUser && currentUser.isAdmin && (
-                  <a className="btn" href="/history">
-                    Login-History
-                  </a>
-                )}
-              </li>
             </ul>
           </nav>
           <div className="head1-items">
