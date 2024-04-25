@@ -30,6 +30,12 @@ import ResetPassword from "./Pages/ResetPassword";
 import ForgotPassword from "./Pages/ForgotPassword";
 import UserManagement from "./Pages/UserManagement";
 import UserDashboard from "./Pages/Managers/UserDashboard.jsx";
+import CreateFeedback from "./Pages/CreateFeedback";
+import UpdateFeedback from "./Pages/UpdateFeedback";
+import ContactUs from "./Pages/ContactUs";
+import UsersFeedback from "./Pages/UsersFeedback.jsx";
+import FeedbackList from "./Pages/feedbacklist";
+import AdminFeedbackUpdate from "./Pages/AdminFeedbackUpdate";
 
 axios.defaults.withCredentials = true;
 
@@ -72,6 +78,15 @@ function App() {
         <Route
           path="/manager/orderdashboard"
           element={<OrderDashboard />}
+        ></Route>
+        <Route path="/userfeedback" element={<UsersFeedback />}></Route>
+        <Route path="/createfeedback" element={<CreateFeedback />}></Route>
+        <Route path="/updatefeedback/:id" element={<UpdateFeedback />}></Route>
+        <Route path="/contactus" element={<ContactUs />}></Route>
+        <Route path="/fblist" element={<FeedbackList />}></Route>
+        <Route
+          path="/Adminfbupdate/:id"
+          element={<AdminFeedbackUpdate />}
         ></Route>
       </Routes>
     </UserContextProvider>

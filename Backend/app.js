@@ -8,6 +8,7 @@ const OfferRoute = require("./routes/offerRoute");
 const userRoutes = require("./routes/user.route.js");
 const authRoutes = require("./routes/auth.route.js");
 const signinHistoryRoutes = require("./routes/signinHistory.route.js");
+const feedbackRoute = require("./routes/feedbackRoute.js");
 const app = express();
 
 connectDB();
@@ -23,6 +24,7 @@ app.use("/", OrderRoute);
 app.use("/", OfferRoute);
 app.use("/", userRoutes);
 app.use("/", authRoutes);
+app.use("/", feedbackRoute);
 app.use("/signinhistory", signinHistoryRoutes);
 
 const port = 5000;
