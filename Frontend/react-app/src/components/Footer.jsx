@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="list-items3">
                 <li className="list-item1">Home</li>
-                <Link to="/fblist">
+                <Link to="/feedback">
                   <li className="list-item1">Feedback</li>
                 </Link>
                 <li className="list-item1">Offers</li>

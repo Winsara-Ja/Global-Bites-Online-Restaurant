@@ -36,6 +36,7 @@ import ContactUs from "./Pages/ContactUs";
 import UsersFeedback from "./Pages/UsersFeedback.jsx";
 import FeedbackList from "./Pages/feedbacklist";
 import AdminFeedbackUpdate from "./Pages/AdminFeedbackUpdate";
+import ManagerSignIn from "./Pages/Managers/ManagerSignin.jsx";
 
 axios.defaults.withCredentials = true;
 
@@ -70,6 +71,7 @@ function App() {
         <Route path="/Italy" element={<Italy />}></Route>
         <Route path="/Spain" element={<Spain />}></Route>
         <Route path="/adminHome" element={<AdminHome />}></Route>
+        <Route path="/managersignin" element={<ManagerSignIn />}></Route>
         <Route
           path="/manager/userdashboard"
           element={<UserDashboard />}
@@ -83,7 +85,7 @@ function App() {
         <Route path="/createfeedback" element={<CreateFeedback />}></Route>
         <Route path="/updatefeedback/:id" element={<UpdateFeedback />}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
-        <Route path="/fblist" element={<FeedbackList />}></Route>
+        <Route path="/feedback" element={<FeedbackList />}></Route>
         <Route
           path="/Adminfbupdate/:id"
           element={<AdminFeedbackUpdate />}

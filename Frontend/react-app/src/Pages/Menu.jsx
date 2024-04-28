@@ -176,7 +176,7 @@ const Menu = () => {
                     <h1>{item.itemName}</h1>
                     <h2>{item.itemId}</h2>
                   </div>
-                  <div className="img">
+                  <div className="menu-img2">
                     <img
                       src={"http://localhost:5000/" + item.image}
                       alt={item.itemName}

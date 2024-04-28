@@ -11,7 +11,7 @@ import "./cart.css";
 const Cart = () => {
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const userID = currentUser._id;
-  const UserName = "Jayana";
+  const UserName = currentUser.username;
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   let Total = 0;

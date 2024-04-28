@@ -89,7 +89,7 @@ const Profile = () => {
 
   const handleSignOut = async () => {
     try {
-      await fetch(`/api/auth/signout`);
+      await fetch(`/signout`);
       dispatch(signOut());
     } catch (error) {
       console.log(error);

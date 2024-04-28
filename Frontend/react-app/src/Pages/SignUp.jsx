@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
+import "./signup.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -37,60 +38,60 @@ const SignUp = () => {
     }
   };
   return (
-    <div className='bg-cover bg-[url("/4.jpg")] bg-opacity-10 w-3/5 h-2/4'>
-      <div className="p-3 max-w-lg mx-auto bg-white rounded-2xl">
-        <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
-        <form className=" flex flex-col gap-4 " onSubmit={handleSubmit}>
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Name"
-            id="username"
-            className="bg-slate-100 p-3 rounded-lg"
-            required
-          />
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Address"
-            id="address"
-            className="bg-slate-100 p-3 rounded-lg"
-            required
-          />
-          <input
-            onChange={handleChange}
-            type="email"
-            placeholder="Email"
-            id="email"
-            className="bg-slate-100 p-3 rounded-lg"
-            required
-          />
-          <input
-            onChange={handleChange}
-            type="password"
-            placeholder="Password"
-            id="password"
-            className="bg-slate-100 p-3 rounded-lg"
-            pattern="^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$"
-            title="Password must contain at least 8 characters, including at least one letter, one number and one special character"
-            required
-          />
-          <button
-            className="bg-[#ffed4a] bg-600 p-3 rounded-lg text-white uppercase hover:opacity-85 disabled:opacity-10 w-full"
-            disabled={loading}
-          >
-            {loading ? "Loading..." : "Sign Up"}
-          </button>
-        </form>
-        <div className="flex gap-2 mt-5">
-          <p>Have an account?</p>
-          <Link to="/signin">
-            <span className="text-blue-500">Sign in</span>
-          </Link>
+    <>
+      <div className="container1">
+        <div className="user_login2">
+          <h2>Create a New Account</h2>
+          <form onSubmit={handleSubmit}>
+            <p className="p">UserName</p>
+            <input
+              onChange={handleChange}
+              type="text"
+              placeholder="Name"
+              id="username"
+              required
+            />
+            <p className="p">Address</p>
+            <input
+              onChange={handleChange}
+              type="text"
+              placeholder="Address"
+              id="address"
+              required
+            />
+            <p className="p">Email</p>
+            <input
+              onChange={handleChange}
+              type="email"
+              placeholder="Email"
+              id="email"
+              required
+            />
+            <p className="p">Password</p>
+            <input
+              onChange={handleChange}
+              type="password"
+              placeholder="Password"
+              id="password"
+              pattern="^(?=.*[a-zA-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$"
+              title="Password must contain at least 8 characters, including at least one letter, one number and one special character"
+              required
+            />
+            <br />
+            <button className="btn" disabled={loading}>
+              {loading ? "Loading..." : "Sign In"}
+            </button>
+          </form>
         </div>
-        <p className="text-red-700 mt-5">{error && "Something went wrong!"}</p>
       </div>
-    </div>
+      <p className="info">
+        Already Have an Account{" "}
+        <Link to="/signin">
+          <b>Sign Up</b>
+        </Link>{" "}
+        here
+      </p>
+    </>
   );
 };
 

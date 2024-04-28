@@ -26,7 +26,6 @@
   background-color: #fffb0be8;
   cursor: pointer;
   outline: none;
-  margin-top: 15px;
 }
 .add-button-container button:hover {
   background-color: #010101;
@@ -100,4 +99,5 @@ button:hover {
   height: 35px;
   width: 700px;
   border: 1px solid black;
+  margin-top: 20px;
 }

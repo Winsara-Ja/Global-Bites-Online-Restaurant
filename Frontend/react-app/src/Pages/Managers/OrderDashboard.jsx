@@ -49,7 +49,7 @@ const OrderDashboard = () => {
 
   const GenarateWeeklyReport = () => {
     orderItems.map((orderItem) => {
-      if (LastWeekDate > new Date(orderItem.createdAt).toLocaleDateString()) {
+      if (LastWeekDate < new Date(orderItem.createdAt).toLocaleDateString()) {
         WeeklyTotal = WeeklyTotal + orderItem.TotalPrice;
       }
     });

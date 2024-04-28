@@ -170,7 +170,7 @@ const History = () => {
                     value={searchQuery}
                     onChange={handleSearch}
                     id="default-search"
-                    class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block w-full p-3 m-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search with name, email..."
                     required
                   />
@@ -218,7 +218,7 @@ const History = () => {
               Next &gt;&gt;
             </button>
           </div>
-          <div className="btn1">
+          <div className="btn12">
             <PDFDownloadLink
               document={<HistoryPDF signinHistories={paginatedHistories} />}
               fileName="signin_history.pdf"

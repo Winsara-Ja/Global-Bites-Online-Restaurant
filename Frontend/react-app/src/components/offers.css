@@ -21,7 +21,7 @@
 .img2 {
   width: 380px;
   height: 250px;
-  margin: 20px;
+  margin: 10px;
   background: url("/4.jpg") no-repeat;
   background-size: contain;
 }
@@ -29,7 +29,7 @@
 .offers-btn {
   width: 375px;
   height: 48px;
-  margin: 20px;
+  margin-top: 30px;
   border: none;
   color: rgb(0, 0, 0);
   font-size: large;

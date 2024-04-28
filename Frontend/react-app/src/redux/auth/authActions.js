@@ -1,10 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-
-export const RESET_PASSWORD_START = 'RESET_PASSWORD_START';
-export const RESET_PASSWORD_SUCCESS = 'RESET_PASSWORD_SUCCESS';
-export const RESET_PASSWORD_FAILURE = 'RESET_PASSWORD_FAILURE';
-
+export const RESET_PASSWORD_START = "RESET_PASSWORD_START";
+export const RESET_PASSWORD_SUCCESS = "RESET_PASSWORD_SUCCESS";
+export const RESET_PASSWORD_FAILURE = "RESET_PASSWORD_FAILURE";
 
 export const resetPasswordStart = () => ({
   type: RESET_PASSWORD_START,
@@ -19,15 +17,14 @@ export const resetPasswordFailure = (error) => ({
   payload: error,
 });
 
-
 export const resetPassword = createAsyncThunk(
-  'auth/resetpassword',
+  "auth/resetpassword",
   async (formData, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3000/api/auth/resetpassword', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/resetpassword", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -35,41 +32,47 @@ export const resetPassword = createAsyncThunk(
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to reset password');
+        throw new Error(data.message || "Failed to reset password");
       }
 
       return data;
     } catch (error) {
-      return rejectWithValue(error.message || 'An error occurred while resetting the password');
+      return rejectWithValue(
+        error.message || "An error occurred while resetting the password"
+      );
     }
   }
 );
 
 export const forgotPassword = createAsyncThunk(
-  'auth/forgotpassword',
+  "auth/forgotpassword",
   async (email, { rejectWithValue }) => {
     try {
       // Ensure email is sent as a string
       const emailString = email.email;
 
-      const response = await fetch('http://localhost:3000/api/auth/forgotpassword', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: emailString }),
-      });
+      const response = await fetch(
+        "http://localhost:3000/api/auth/forgotpassword",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: emailString }),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to send reset password email');
+        throw new Error(data.message || "Failed to send reset password email");
       }
 
-      return { message: 'Reset password link sent to your email', ...data };
+      return { message: "Reset password link sent to your email", ...data };
     } catch (error) {
-      return rejectWithValue(error.message || 'An error occurred while sending reset password email');
+      return rejectWithValue(
+        error.message || "An error occurred while sending reset password email"
+      );
     }
   }
 );
-

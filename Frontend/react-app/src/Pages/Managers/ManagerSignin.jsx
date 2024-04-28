@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Signin.css";
+import "./ManagerSignin.css";
 import axios from "axios";
 import {
   signInStart,
   signInSuccess,
   signInFailure,
-} from "../redux/user/userSlice";
+} from "../../redux/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import OAuth from "../components/OAuth";
+import OAuth from "../../components/OAuth";
 
 const SignIn = () => {
   const [formData, setformData] = useState({});
@@ -39,16 +39,16 @@ const SignIn = () => {
         return;
       }
       dispatch(signInSuccess(data));
-      navigate("/");
+      navigate("/adminhome");
     } catch (error) {
       dispatch(signInFailure(error));
     }
   };
   return (
     <>
-      <div className="container2">
-        <div className="user_login">
-          <h2>Login To Your Account</h2>
+      <div className="container3">
+        <div className="user_login3">
+          <h2>Global Bites Manager LogIn</h2>
           <form onSubmit={handleSubmit}>
             <p className="p">Email</p>
             <input
@@ -65,33 +65,12 @@ const SignIn = () => {
               onChange={handleChange}
             />
             <br />
-            <Link to="/forgotpassword">
-              <p className="trouble">Forgot password?</p>
-            </Link>
             <button className="btn" disabled={loading}>
               {loading ? "Loading..." : "Sign In"}
             </button>
           </form>
-          <div className="signin">-— or Sign in with —-</div>
-          <span id="Signinbtn">
-            <div id="customBtn">
-              <span className="icon"></span>
-              <span className="buttonText">Google</span>
-            </div>
-            <div id="customBtn1">
-              <span className="icon1"></span>
-              <span className="buttonText1">Facebook</span>
-            </div>
-          </span>
         </div>
       </div>
-      <p className="info">
-        Doesn't Have an Account{" "}
-        <Link to="/signup">
-          <b>Sign Up</b>
-        </Link>{" "}
-        here
-      </p>
     </>
   );
 };

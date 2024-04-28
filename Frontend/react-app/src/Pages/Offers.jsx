@@ -15,6 +15,7 @@ const Offers = () => {
   return (
     <>
       <Header />
+      <div className="emptyspace"></div>
       <div>
         {offers.map((offer) => {
           return (
