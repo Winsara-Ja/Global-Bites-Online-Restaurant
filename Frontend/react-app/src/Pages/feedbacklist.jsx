@@ -28,7 +28,6 @@ function UsersFeedback() {
               text: "comment submitted successfully!",
               icon: "success"
             }).then(() => {
-              navigate('/fblist');
               window.location.reload();
             });
           })
@@ -105,6 +104,7 @@ function UsersFeedback() {
                             placeholder='Enter Name'
                             className="FBlist"
                             onChange={(e) => setName(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -115,6 +115,7 @@ function UsersFeedback() {
                             placeholder='Enter Email'
                             className="FBlist"
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -125,6 +126,7 @@ function UsersFeedback() {
                             placeholder='Enter Feedback'
                             className="FBlist"
                             onChange={(e) => setFeedback(e.target.value)}
+                            required
                         />
                     </div>
                     <div className='FBbtn'>
