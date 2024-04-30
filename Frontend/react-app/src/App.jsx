@@ -37,6 +37,10 @@ import UsersFeedback from "./Pages/UsersFeedback.jsx";
 import FeedbackList from "./Pages/feedbacklist";
 import AdminFeedbackUpdate from "./Pages/AdminFeedbackUpdate";
 import ManagerSignIn from "./Pages/Managers/ManagerSignin.jsx";
+import AddItem from "./components/AddItem/AddItem";
+import UpdateItem from "./components/UpdateItem/UpdateItem";
+import Items from "./components/Inventory/Items";
+import Item from "./components/Inventory/Item";
 
 axios.defaults.withCredentials = true;
 
@@ -90,6 +94,10 @@ function App() {
           path="/Adminfbupdate/:id"
           element={<AdminFeedbackUpdate />}
         ></Route>
+        <Route path="/addinventory" element={<AddItem />} />
+        <Route path="/inventory" element={<Items />} />
+        <Route path="/items/:id" element={<Item />} />
+        <Route path="/items/update/:id" element={<UpdateItem />} />
       </Routes>
     </UserContextProvider>
   );
